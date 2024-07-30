@@ -17,6 +17,8 @@ export interface QuestionsProps {
     options: string[];
     value: string;
     error?: string;
+    detail?: string;
+    detailPlaceholder?: string
     onChange: (arg: any) => void
 }
 

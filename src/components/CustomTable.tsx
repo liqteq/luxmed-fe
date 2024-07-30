@@ -2,7 +2,6 @@
 import { Checkbox, Table } from 'antd';
 import React, { useState } from 'react';
 import { CustomTableProps } from './types';
-import { aestheticsProducts } from '@/constants/aestheticsProduct.json'
 
 const CustomTable: React.FC<CustomTableProps> = (props) => {
 
@@ -46,7 +45,7 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
         <Checkbox
           checked={value}
           onChange={handleCheckboxChangeFactory(rowIndex, "available")}
-          
+
         />
       )
     },
