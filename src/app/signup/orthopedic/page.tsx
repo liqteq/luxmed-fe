@@ -1,9 +1,13 @@
-import React from 'react'
+import CheckBoxController from '@/components/FormItems/CustomCheckBox'
+import SignUpWrapper from '@/components/Wrappers/SignUpWrapper'
 
-const OrthoSignup = () => {
+const Orthopedic = () => {
+
   return (
-    <div>OrthoSignup</div>
+    <div>
+      <SignUpWrapper />
+    </div>
   )
 }
 
-export default OrthoSignup
+export default Orthopedic

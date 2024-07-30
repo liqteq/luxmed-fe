@@ -1,3 +1,4 @@
+import SignUpWrapper from '@/components/Wrappers/SignUpWrapper'
 import React from 'react'
 
 interface SignUpProps { }
@@ -5,7 +6,7 @@ interface SignUpProps { }
 const SignUp: React.FC<SignUpProps> = () => {
     return (
         <div>
-            SignUpForm
+            <SignUpWrapper/>
         </div>
     )
 }

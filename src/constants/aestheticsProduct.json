@@ -1,0 +1,84 @@
+{
+    "aestheticsProducts": [
+        {
+            "key": 1,
+            "productname": "Product A",
+            "manufacturer": "Manufacturer A",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 3,
+            "productname": "Product B",
+            "manufacturer": "Manufacturer B",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 4,
+            "productname": "Product A",
+            "manufacturer": "Manufacturer A",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 5,
+            "productname": "Product B",
+            "manufacturer": "Manufacturer B",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 6,
+            "productname": "Product A",
+            "manufacturer": "Manufacturer A",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 7,
+            "productname": "Product B",
+            "manufacturer": "Manufacturer B",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 8,
+            "productname": "Product A",
+            "manufacturer": "Manufacturer A",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 9,
+            "productname": "Product B",
+            "manufacturer": "Manufacturer B",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 10,
+            "productname": "Product A",
+            "manufacturer": "Manufacturer A",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 11,
+            "productname": "Product B",
+            "manufacturer": "Manufacturer B",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        }
+    ]
+}

@@ -2,14 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.question-radio .ant-radio-group {
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));;
+}
+
+.question-radio .ant-radio-wrapper {
+    grid-row: 4;
+}
 @font-face {
     font-family: "Satoshi";
     src: url('../Assets/font/Satoshi-Medium.ttf');
-}
-
-body {
-    margin: 0 !important;
-    padding: 0 !important;
 }
 
 *,

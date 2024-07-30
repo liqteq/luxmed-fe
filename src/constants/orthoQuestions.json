@@ -1,0 +1,79 @@
+{
+    "questions": [
+        {
+            "id": "1",
+            "question": "Are you willing to share with potential clients your clinic's appointment availabilities?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "question-1",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            }
+        },
+        {
+            "id": "2",
+            "question": "Do you offer special promotions on products/ procedures throughout the year?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "question-2",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            }
+        },
+        {
+            "id": "3",
+            "question": "Are referrals from doctors mandatory?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "question-3",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            }
+        },
+        {
+            "id": "4",
+            "question": "Do you offer same-day Injectable Treatments, if not typically how long in advance do you require an appointment?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "question-4",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            }
+        },
+        {
+            "id": "5",
+            "question": "Do you offer telemedicine consulting?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "question-5",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            }
+        }
+    ]
+}
