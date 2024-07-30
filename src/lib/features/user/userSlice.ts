@@ -1,13 +1,9 @@
-import { User } from '@/types'
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface CounterState {
-    user: User | null
 }
 
 const initialState: CounterState = {
-    user: null
 }
 
 export const userSlice = createSlice({
@@ -15,7 +11,7 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         setUser: (state, { payload }) => {
-            state.user = payload
+            // state.user = payload
         }
     },
 })
