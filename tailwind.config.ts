@@ -19,7 +19,7 @@ const config = {
           },
           gray: {
             700: 'rgba(51, 51, 51, 0.1)',
-            lightGray:"rgba(102, 102, 102, 1)"
+            lightGray: "rgba(102, 102, 102, 1)"
 
 
           },
@@ -33,7 +33,9 @@ const config = {
 
           },
           error: {
-
+            50: "#FEF3F2",
+            600: "#D92D20",
+            700: "#B42318"
           },
           blue: {
 

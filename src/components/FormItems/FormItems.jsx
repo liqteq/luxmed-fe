@@ -32,7 +32,7 @@ const getExternalProps = (type, fieldState, field = {}, props) => {
     return errorProps[type]
 }
 const TextController = ({ defaultValue = null, fieldCss = "w-full", inputDivCss = 'items-start', labelCss = 'w-full', inputType, ...props }) => {
-    const { divClassName = 'flex flex-col gap-1', } = props
+    const { divClassName = 'flex flex-col gap-1 w-full', } = props
     const typeToRender = props?.use || props?.native.formType || defaultFormType
     return (
         <Controller
@@ -55,7 +55,6 @@ const TextController = ({ defaultValue = null, fieldCss = "w-full", inputDivCss 
                 };
                 return (
                     <div className={`${divClassName}`}>
-
                         {props?.label && <span className={`text-[10px]  text-custom-gray-800 font-semibold  ${labelCss}`}>{props?.label}</span>}
                         <div className={`flex items-center gap-2 w-full`}>
                             <div className="flex flex-col gap-1 w-full ">
@@ -69,7 +68,7 @@ const TextController = ({ defaultValue = null, fieldCss = "w-full", inputDivCss 
                                     showCount={props?.check || false}
                                     onChangeCounter={props?.onChangeCounter}
                                 />
-                                {errorProps?.status && <span className="text-[10px] text-red-600"> {errorProps?.message}</span>}
+                                {errorProps?.status && <span style={{ color: "#D92D20", fontSize: "11px" }}> {errorProps?.message}</span>}
                             </div>
                             {props?.cross && <Image src={ImageImports.closeIcon} width={20} onClick={() => props?.crossFunc()} className="cursor-pointer" />}
                         </div>
@@ -113,7 +112,7 @@ const TextAreaController = ({ defaultValue = null, fieldCss = "w-full   ", ...pr
                                 onChangeCounter={props?.onChangeCounter}
                                 {...field}
                             />
-                            {errorProps?.status && <span className="text-[10px] text-red-600 "> {errorProps?.message}</span>}
+                            {errorProps?.status && <span style={{ color: "#D92D20", fontSize: "11px" }}> {errorProps?.message}</span>}
                         </div>
                     </div>
                 )

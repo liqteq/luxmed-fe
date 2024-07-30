@@ -26,6 +26,45 @@ a,
     background-image: url('../assets/images/greenBg.svg')
 }
 
-.ant-input {
-    /* background-color: none !important; */
+.homeForm .ant-input:hover {
+    background-color: transparent !important;
+    /* Remove hover background color */
+}
+
+/* Targeting Ant Design TextArea component */
+.homeForm .ant-input-textarea:hover .ant-input {
+    background-color: transparent !important;
+    /* Remove hover background color */
+}
+
+.homeForm .ant-input::placeholder {
+    color: white;
+    /* Change placeholder color to white */
+}
+
+/* Targeting Ant Design TextArea component */
+.homeForm .ant-input::placeholder {
+    color: white;
+    /* Change placeholder color to white */
+}
+
+/* Remove hover, focus, and active background color for Input */
+.homeForm .ant-input:hover,
+.ant-input:focus,
+.ant-input:active {
+    background-color: transparent !important;
+}
+
+/* Remove hover, focus, and active background color for TextArea */
+.homeForm .ant-input-textarea:hover .ant-input,
+.ant-input-textarea:focus .ant-input,
+.ant-input-textarea:active .ant-input {
+    background-color: transparent !important;
+}
+
+/* Targeting Ant Design TextArea placeholder */
+.homeForm .ant-input-textarea::placeholder,
+.homeForm .ant-input-textarea .ant-input::placeholder {
+    color: white;
+    /* Change placeholder color to white */
 }

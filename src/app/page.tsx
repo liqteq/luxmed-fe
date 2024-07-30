@@ -13,9 +13,9 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
   const { children } = props
   const Form = useForm()
   const fields = [
-    { type: 1, name: 'name', label: '', rules: { required: true, }, use: 'antd', className: "text-xs h-10 ", span: "col-span-12", },
-    { type: 1, name: 'email', label: '', rules: { required: true, }, use: 'antd', className: "text-xs h-10 ", span: "col-span-12", },
-    { type: 11, name: 'message', label: '', rules: { required: true, }, use: 'antd', className: "text-xs h-10 ", span: "col-span-12", },
+    { type: 1, name: 'name', label: '', rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-transparent  rounded-none text-white", placeholder: "Your Name", span: "col-span-12", },
+    { type: 1, name: 'email', label: '', rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-transparent  rounded-none text-white", placeholder: "Your Email", span: "col-span-12", },
+    { type: 11, name: 'message', label: '', rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-transparent rounded-none text-white", placeholder: "Share your thoughts", span: "col-span-12", },
 
   ]
   return (
@@ -94,10 +94,10 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
         <div className='col-span-6'>
           <FormController
             formType={'antd'}
-            onSubmit={<CustomButton htmlType='submit' text='submit' />}
-            submitButton={<CustomButton htmlType='submit' text='Send Feedback' addcss='bg-white my-2 col-span-3' />}
+            onSubmit={(val) => { console.log({ val }) }}
+            submitButton={<CustomButton htmlType='submit' text='Send Feedback' addcss='bg-white my-2 col-span-3 text-custom-primary-500' />}
             Form={Form}
-            className="grid grid-cols-12 gap-3"
+            className="grid grid-cols-12 gap-3 homeForm"
             fields={fields} />
         </div>
       </div>
