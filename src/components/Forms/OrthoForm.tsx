@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import Question from '../Question'
+import Question from '../FormItems/Question'
 import { OrthoFormProps } from './types'
 import { questions } from '@/constants/orthoQuestions.json'
 

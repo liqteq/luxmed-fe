@@ -1,6 +1,6 @@
 import { Radio } from 'antd'
 import React from 'react'
-import { QuestionsProps } from './types'
+import { QuestionsProps } from '../types'
 
 
 const Question: React.FC<QuestionsProps> = (props) => {
