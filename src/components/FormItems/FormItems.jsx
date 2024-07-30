@@ -1,6 +1,8 @@
 import { AutoComplete as AntDAutoComplete, Checkbox as AntDCheckbox, DatePicker as AntDDatePicker, Radio as AntDRadio, Select as AntDSelect, Switch as AntDSwitch, Input, Rate, Space, TimePicker } from 'antd';
 import { Controller } from "react-hook-form";
 const defaultFormType = 'antd'
+const { TextArea } = Input
+
 const getExternalProps = (type, fieldState, field = {}, props) => {
     const errorProps = {
         mui: {
@@ -81,7 +83,7 @@ const TextAreaController = ({ defaultValue = null, fieldCss = "w-full   ", ...pr
 
     const { divClassName = 'flex flex-col gap-1' } = props
     const TextFieldControl = {
-        mui: TextField,
+
         antd: TextArea
     }
     const typeToRender = props?.use || props?.native.formType || defaultFormType
@@ -121,5 +123,7 @@ const TextAreaController = ({ defaultValue = null, fieldCss = "w-full   ", ...pr
 }
 export const FormMap = {
     1: TextController,
+    11: TextAreaController,
+
 }
 

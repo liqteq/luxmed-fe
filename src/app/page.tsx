@@ -13,8 +13,9 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
   const { children } = props
   const Form = useForm()
   const fields = [
+    { type: 1, name: 'name', label: '', rules: { required: true, }, use: 'antd', className: "text-xs h-10 ", span: "col-span-12", },
     { type: 1, name: 'email', label: '', rules: { required: true, }, use: 'antd', className: "text-xs h-10 ", span: "col-span-12", },
-    { type: 1, name: 'email', label: '', rules: { required: true, }, use: 'antd', className: "text-xs h-10 ", span: "col-span-12", },
+    { type: 11, name: 'message', label: '', rules: { required: true, }, use: 'antd', className: "text-xs h-10 ", span: "col-span-12", },
 
   ]
   return (
