@@ -2,7 +2,7 @@
  
 -------- Format to create interface and types --------
 
-export interface User {
+export interface User extends Drivwr{
     name: string;
     age: number;
     address: Address
