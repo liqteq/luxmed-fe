@@ -10,68 +10,54 @@ const config = {
 	],
   prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
+        custom: {
+          primary: {
+            25: "#F1FAF9",
+            50: "#E6F2F1",
+            100: "#B0D6D4",
+            500: "#017A73", //default theme color
+            700: "#015752",
+          },
+          gray: {
+            50: "#F9FAFB",
+            100: "#F2F4F7",
+            200: "#EAECF0",
+            300: "#D0D5DD",
+            400: "#475467",
+            500: "#667085",
+            600: "#475467",
+            700: "#344054",
+            800: "#202939",
+            900: "#101828",
+
+          },
+          success: {
+            50: "#ECFDF3",
+            600: "#039855",
+            700: "#027A48",
+          },
+          warning: {
+            50: "#FFF4ED",
+            700: "#B93815",
+            400: "#FDB022"
+          },
+          purple: {
+            50: "#F4F3FF",
+            700: "#5925DC",
+          },
+          error: {
+            50: "#FEF3F2",
+            600: "#D92D20",
+            700: "#B42318"
+          },
+          blue: {
+            50: "#EFF8FF",
+            700: "#175CD3"
+          },
+        }
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
