@@ -1,9 +1,10 @@
 'use client'
 import React from 'react'
-import { Controller, useForm } from 'react-hook-form'
-import Question from '../FormItems/Question'
+import { useForm } from 'react-hook-form'
+import CustomTable from '../CustomTable'
 import { OrthoFormProps } from './types'
-import { questions } from '@/constants/orthoQuestions.json'
+import { aestheticsProducts } from '@/constants/aestheticsProduct.json'
+import { botoxProducts } from '@/constants/botoxProducts.json'
 
 
 const OrthoForm: React.FC<OrthoFormProps> = (props) => {
@@ -13,7 +14,7 @@ const OrthoForm: React.FC<OrthoFormProps> = (props) => {
     return (
         <div>
             <form onSubmit={handleSubmit(data => console.log(data))}>
-                {questions.map((que) => (
+                {/* {questions.map((que) => (
                     <Controller
                         control={control}
                         name={que.name}
@@ -25,12 +26,15 @@ const OrthoForm: React.FC<OrthoFormProps> = (props) => {
                                 value={field.value}
                                 onChange={(arg) => field.onChange(arg)}
                                 error={fieldState.error?.message}
+                                classname = {que?.classname}
                             />
                         }
                         rules={que?.rules}
                     />
-                ))}
-                <button type='submit'>Submit</button>
+                ))} */}
+                <CustomTable heading='Aesthetic Medicine' data={aestheticsProducts} />
+                <CustomTable heading='Aesthetic Medicine' data={botoxProducts} />
+                {/* <button type='submit'>Submit</button> */}
             </form>
         </div>
     )

@@ -19,3 +19,7 @@ export interface QuestionsProps {
     error?: string;
     onChange: (arg: any) => void
 }
+
+export interface CustomTableProps {
+    heading: string
+}
