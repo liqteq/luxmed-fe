@@ -70,13 +70,13 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
 
   return (
     <div>
-      <h4 className='font-bold my-3'>{heading}</h4>
+      <h4 className='font-bold my-3 custom-table'>{heading}</h4>
       <Table
         columns={columns}
         dataSource={checkboxState}
         className='mb-4'
         pagination={false}
-        bordered
+        // bordered
         size='small'
       />
     </div>

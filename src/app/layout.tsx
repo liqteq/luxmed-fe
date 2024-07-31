@@ -13,10 +13,11 @@ export const metadata: Metadata = {
 export const fetchCache = 'default-no-store'
 
 interface RootLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
+  layout: 'default' | 'wide'; 
 }
 
-const RootLayout: React.FC = ({ children }:any) => {
+const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body >
