@@ -1,13 +1,13 @@
 {
     "questions": [
         {
-            "id": "1",
-            "question": "Are you willing to share with potential clients your clinic's appointment availabilities?",
+            "id": "2",
+            "question": "Do you offer special promotions on products/ procedures throughout the year?",
             "options": [
                 "Yes",
                 "No"
             ],
-            "name": "question-1",
+            "name": "q-2",
             "rules": {
                 "required": {
                     "value": true,
@@ -16,13 +16,13 @@
             }
         },
         {
-            "id": "2",
-            "question": "Do you offer special promotions on products/ procedures throughout the year?",
+            "id": "1",
+            "question": "Are you willing to share with potential clients your clinic's appointment availabilities on the same day they access the app?",
             "options": [
                 "Yes",
                 "No"
             ],
-            "name": "question-2",
+            "name": "q-2",
             "rules": {
                 "required": {
                     "value": true,
@@ -37,7 +37,7 @@
                 "Yes",
                 "No"
             ],
-            "name": "question-3",
+            "name": "q-3",
             "rules": {
                 "required": {
                     "value": true,
@@ -52,7 +52,7 @@
                 "Yes",
                 "No"
             ],
-            "name": "question-4",
+            "name": "q-4",
             "rules": {
                 "required": {
                     "value": true,
@@ -67,7 +67,7 @@
                 "Yes",
                 "No"
             ],
-            "name": "question-5",
+            "name": "q-5",
             "rules": {
                 "required": {
                     "value": true,

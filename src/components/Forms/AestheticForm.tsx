@@ -1,15 +1,17 @@
 'use client'
 import { ImageImports } from '@/assets/ImageImports'
-import { Steps } from 'antd'
+import { Modal, Steps } from 'antd'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import OrthoQuestions from '../OrthoQuestions'
-import OrthoProducts from './OrthoProducts'
+import Questionaire from '../Questionaire'
+import Products from '../Products'
 import { OrthoFormProps } from './types'
 import PersonalDetails from '../PersonalDetails'
 import ClinicDetail from '../ClinicDetail'
 import Congragulations from '../Congragulations'
+import { questions } from '@/constants/orthoQuestions.json'
+import CustomButton from '../UI/Button'
 
 const Step = Steps.Step
 const items = [
@@ -30,19 +32,25 @@ const items = [
 
     },
 ]
-const OrthoForm: React.FC<OrthoFormProps> = (props) => {
-    const { control, handleSubmit } = useForm()
+const AestheticForm: React.FC<OrthoFormProps> = (props) => {
+    const { control } = useForm()
+    const [modal, setModal] = useState(false)
     const [submittedData, setSubmittedData] = useState({
     })
-    const [step, setStep] = useState(0)
-    const orthoform = {
+    const [step, setStep] = useState(2)
+    const handleSubmit = () => {
+        setModal(true)
+        console.log(JSON.stringify(submittedData, null, 2))
+    }
+    const formType: Record<number, any> = {
         0: <PersonalDetails control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />,
         1: <ClinicDetail control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />,
-        2: <OrthoQuestions control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />,
-        3: <OrthoProducts control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />,
+        2: <Questionaire setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} questions={questions} type='aesthetic' />,
+        3: <Products setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} questions={questions} type='aesthetic' handleSubmit={handleSubmit} />,
         4: <Congragulations control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />
 
     }
+
     return (
         <div className='flex justify-center'>
             <div className='w-[70%] my-[10px] '>
@@ -73,11 +81,21 @@ const OrthoForm: React.FC<OrthoFormProps> = (props) => {
                         </Steps>
                     </div >
                 }
-
-                {orthoform[step]}
+                {formType[step]}
             </div>
+            <Modal width={350} title="" footer={null} open={modal} onCancel={() => { }}>
+                <div className='flex justify-center my-4'>
+                    <Image src={ImageImports?.logo} alt='' className='h-[60px]' />
+                </div>
+                <p className='text-[11px] text-custom-gray-lightGray text-center my-7' >
+                    Someone will reach out again to you shortly to assist you in filling out your business profile.
+                </p>
+                <div className='flex justify-center my-4'>
+                    <CustomButton onClick={() => { setStep(4); setModal(false) }} btntype='green' text='Ok' addcss='px-7' />
+                </div>
+            </Modal>
         </div>
     )
 }
 
-export default OrthoForm
+export default AestheticForm

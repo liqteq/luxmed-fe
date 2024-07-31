@@ -142,7 +142,7 @@ const SelectController = ({ defaultValue = undefined, ...props }) => {
                 };
                 return (
                     <span className={divClassName}>
-                        {props?.label && <span className={`text-[10px] text-custom-gray-800 font-semibold ${props?.labelCss}`}>{props?.label}</span>}
+                        {props?.label && <span className={`text-[10px] text-custom-gray-800  ${props?.labelCss}`}>{props?.label}</span>}
                         <div className={`flex flex-col gap-1 w-full ${props?.requiredDev} items-start`}>
                             <div className={`flex items-center gap-3 border border-custom-gray-300 rounded-[6px] w-full  ${props?.mainDivCss}`}>
                                 {props?.icon && <Image src={props?.icon} className="ml-[11px]" width={props?.iconWidth || 14} />}
@@ -150,7 +150,7 @@ const SelectController = ({ defaultValue = undefined, ...props }) => {
                                     {...field}
                                     mode={props?.mode}
                                     className="w-full rounded-none"
-                                    placeholder={props?.placeholder }
+                                    placeholder={props?.placeholder}
                                     onChange={customOnChange}
                                     allowClear={props?.allowClear || true}
                                     showSearch
@@ -161,7 +161,7 @@ const SelectController = ({ defaultValue = undefined, ...props }) => {
                                     {props?.options && props?.options?.map(x => <AntDSelect.Option value={x?.value}>{x?.title}</AntDSelect.Option>)}
                                 </AntDSelect>
                             </div>
-                            {errorProps?.status && <span className={`text-[10px] text-red-600 w-full ${props?.error}`}> {errorProps?.message}</span>}
+                            {errorProps?.status && <span style={{ color: "#D92D20", fontSize: "11px" }}> {errorProps?.message}</span>}
                         </div>
                     </span >
                 )

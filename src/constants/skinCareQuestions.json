@@ -7,14 +7,14 @@
                 "Yes",
                 "No"
             ],
-            "name": "question-1",
+            "name": "sc-question-1",
             "rules": {
                 "required": {
                     "value": true,
                     "message": "* This is Required."
                 }
             },
-            "detail": "detail-1",
+            "detail": "sc-detail-1",
             "detailPlaceholder": "Please add which brand."
         },
         {
@@ -24,14 +24,14 @@
                 "Yes",
                 "No"
             ],
-            "name": "question-2",
+            "name": "sc-question-2",
             "rules": {
                 "required": {
                     "value": true,
                     "message": "* This is Required."
                 }
             },
-            "detail": "detail-2",
+            "detail": "sc-detail-2",
             "detailPlaceholder": "Please add which brand."
         }
     ]
