@@ -1,38 +1,8 @@
 {
-    "questions": [
-        {
-            "id": "2",
-            "question": "Do you offer special promotions on products/ procedures throughout the year?",
-            "options": [
-                "Yes",
-                "No"
-            ],
-            "name": "q-2",
-            "rules": {
-                "required": {
-                    "value": true,
-                    "message": "* This is Required."
-                }
-            }
-        },
-        {
-            "id": "1",
-            "question": "Are you willing to share with potential clients your clinic's appointment availabilities on the same day they access the app?",
-            "options": [
-                "Yes",
-                "No"
-            ],
-            "name": "q-2",
-            "rules": {
-                "required": {
-                    "value": true,
-                    "message": "* This is Required."
-                }
-            }
-        },
+    "questionaire": [
         {
             "id": "3",
-            "question": "Are referrals from doctors mandatory?",
+            "question": "Are you willing to share with potential clients your clinic's appointment availabilities on the same day they access the app?",
             "options": [
                 "Yes",
                 "No"
@@ -47,7 +17,7 @@
         },
         {
             "id": "4",
-            "question": "Do you offer same-day Injectable Treatments, if not typically how long in advance do you require an appointment?",
+            "question": "Do you offer special promotions on specific products/ procedures throughout the year?",
             "options": [
                 "Yes",
                 "No"
@@ -62,12 +32,42 @@
         },
         {
             "id": "5",
-            "question": "Do you offer telemedicine consulting?",
+            "question": "Are referrals from doctors mandatory?",
             "options": [
                 "Yes",
                 "No"
             ],
             "name": "q-5",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            }
+        },
+        {
+            "id": "6",
+            "question": "Do you offer same-day Injectable Treatments, if not typically how long in advance do you require an appointment?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "q-6",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            }
+        },
+        {
+            "id": "6",
+            "question": "Do you offer telemedicine consulting?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "q-6",
             "rules": {
                 "required": {
                     "value": true,

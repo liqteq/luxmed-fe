@@ -10,8 +10,11 @@ import { OrthoFormProps } from './types'
 import PersonalDetails from '../PersonalDetails'
 import ClinicDetail from '../ClinicDetail'
 import Congragulations from '../Congragulations'
-import { questions } from '@/constants/orthoQuestions.json'
+import { questionaire } from '@/constants/orthoQuestionaire.json'
+import { questions } from '@/constants/orthopedicQuestions.json'
+import { orthopedicProducts } from '@/constants/orthopedicProduct.json'
 import CustomButton from '../UI/Button'
+import { botoxProducts } from '@/constants/orthoBotoxProducts.json'
 
 const Step = Steps.Step
 const items = [
@@ -37,7 +40,7 @@ const OrthoForm: React.FC<OrthoFormProps> = (props) => {
     const [modal, setModal] = useState(false)
     const [submittedData, setSubmittedData] = useState({
     })
-    const [step, setStep] = useState(0)
+    const [step, setStep] = useState(3)
     const handleSubmit = () => {
         setModal(true)
         console.log(JSON.stringify(submittedData, null, 2))
@@ -45,8 +48,8 @@ const OrthoForm: React.FC<OrthoFormProps> = (props) => {
     const formType: Record<number, any> = {
         0: <PersonalDetails control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />,
         1: <ClinicDetail control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />,
-        2: <Questionaire setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} questions={questions} type='aesthetic' />,
-        3: <Products setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} questions={questions} type='aesthetic' handleSubmit={handleSubmit} />,
+        2: <Questionaire setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} questions={questionaire} type='orthopedic' />,
+        3: <Products setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} questions={questions} type='orthopedic' handleSubmit={handleSubmit} products={orthopedicProducts} botoxProducts={botoxProducts} />,
         4: <Congragulations control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />
 
     }

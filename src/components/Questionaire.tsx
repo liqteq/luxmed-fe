@@ -22,7 +22,6 @@ const Questionaire: React.FC<OrthoQuestionsProps> = (props) => {
             props?.setStep((prev) => Number(prev) + 1)
         })()
     }
-    console.log(props?.questions)
     return (
         <>
             {props?.questions.map((que, index) => (

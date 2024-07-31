@@ -1,0 +1,38 @@
+{
+    "questions": [
+        {
+            "id": "1",
+            "question": "Q: Do your sell medical braces at your clinic?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "or-question-1",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            },
+            "detail": "or-detail-1",
+            "detailPlaceholder": "Please add which brand."
+        },
+        {
+            "id": "2",
+            "question": "Q: Are there any other products or services  that your office sells/promotes?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "or-question-2",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            },
+            "detail": "or-detail-2",
+            "detailPlaceholder": "Please add which brand."
+        }
+    ]
+}
