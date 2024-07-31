@@ -76,7 +76,7 @@ a,
 }
 
 /* Remove hover, focus, and active background color for Input */
-.homeForm .ant-input:hover,
+.homeForm.ant-input:hover,
 .ant-input:focus,
 .ant-input:active {
     background-color: transparent !important;
@@ -90,8 +90,8 @@ a,
 }
 
 /* Targeting Ant Design TextArea placeholder */
-.homeForm .ant-input-textarea::placeholder,
-.homeForm .ant-input-textarea .ant-input::placeholder {
+.homeForm.ant-input-textarea::placeholder,
+.homeForm.ant-input-textarea .ant-input::placeholder {
     color: white;
     /* Change placeholder color to white */
 }

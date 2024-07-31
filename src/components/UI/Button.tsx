@@ -13,7 +13,7 @@ const CustomButton: React.FC<CustomButtonProps> = (props) => {
         green: 'bg-custom-primary-500 text-white border-none rounded-none text-[11px]',
         gray: 'bg-custom-gray-700 text-black border-none rounded-none text-[11px]',
         lightGreen: "bg-custom-primary-lightGreen text-custom-primary-500 border-none rounded-none text-[11px]",
-        default: 'border-none rounded-none text-[11px]',
+        default: 'text-[11px]',
     }
 
     return (
