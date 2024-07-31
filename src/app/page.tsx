@@ -1,14 +1,12 @@
 'use client'
 import { ImageImports } from '@/assets/ImageImports'
+import FormController from '@/components/Controller/FormController'
 import CustomButton from '@/components/UI/Button'
-import { url } from 'inspector'
 import Image from 'next/image'
 import React from 'react'
-import FormController from '@/components/Controller/FormController'
 import { useForm } from 'react-hook-form'
-import { usePathname } from 'next/navigation'
 interface RootLayoutProps {
-  children: React.ReactNode
+  children: any
 }
 const RootLayout: React.FC<RootLayoutProps> = (props) => {
   const { children } = props

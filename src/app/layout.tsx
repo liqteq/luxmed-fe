@@ -11,11 +11,12 @@ export const metadata: Metadata = {
   description: "Where Patients From Around The World Find You, and You Find Success!",
 };
 export const fetchCache = 'default-no-store'
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+
+interface RootLayoutProps {
+  children: React.ReactNode
+}
+
+const RootLayout: React.FC = ({ children }:any) => {
   return (
     <html lang="en">
       <body >
@@ -30,3 +31,4 @@ export default function RootLayout({
     </html>
   );
 }
+export default RootLayout

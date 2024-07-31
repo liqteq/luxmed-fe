@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import FormController from './Controller/FormController'
 import CustomButton from './UI/Button'
@@ -15,7 +15,7 @@ const ClinicDetail: React.FC<PersonalDetailProps> = (props) => {
         { type: 1, name: 'zipcode', label: 'Postal/Zip Code', rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]  ", placeholder: "", span: "col-span-6", },
         { type: 1, name: 'email', label: 'Email', rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]   ", placeholder: "", span: "col-span-6", },
         { type: 1, name: 'phone', label: 'Phone', rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]  ", placeholder: "", span: "col-span-6", },
-        { type: 2, name: 'language', label: 'Language Spoken', rules: { required: true, }, use: 'antd', mode: "multiple", options: languages, divClassName: "w-full",span: "col-span-6",mainDivCss:"w-full" },
+        { type: 2, name: 'language', label: 'Language Spoken', rules: { required: true, }, use: 'antd', mode: "multiple", options: languages, divClassName: "w-full", span: "col-span-6", mainDivCss: "w-full" },
         { type: 1, name: 'head_practitioner', label: 'Head Practitioner', rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]   ", placeholder: "", span: "col-span-6", },
         { type: 1, name: 'office_manager', label: 'Office Manager', rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]   ", placeholder: "", span: "col-span-6", },
         { type: 1, name: 'office_manager_emailAddress', label: "Office Manager's Email Address", rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]   ", placeholder: "", span: "col-span-6", },
@@ -24,14 +24,15 @@ const ClinicDetail: React.FC<PersonalDetailProps> = (props) => {
         { type: 1, name: 'purchasing_management_email', label: "Purchasing Management Email Address", rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]  ", placeholder: "", span: "col-span-6", },
         { type: 1, name: 'purchasing_management_telNo', label: "Purchasing Management Tel no.", rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]  ", placeholder: "", span: "col-span-6", },
     ]
-    const handleSetValues = () => {
+    const handleSetValues = useCallback(() => {
         if (props?.submittedData?.clinicDetail) Object?.keys(props?.submittedData?.clinicDetail)?.map((item, index) => {
             Form?.setValue(item, props?.submittedData?.clinicDetail[item])
         })
-    }
+    }, [Form, props?.submittedData?.clinicDetail])
+
     useEffect(() => {
         handleSetValues()
-    }, [props?.step])
+    }, [props?.step, handleSetValues, Form])
     return (
         <div>
             <FormController

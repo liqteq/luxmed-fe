@@ -63,9 +63,9 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
     }
   ];
 
-  useEffect(()=>{
+  useEffect(() => {
     onChange(checkboxState)
-  },[checkboxState])
+  }, [checkboxState, onChange])
 
 
   return (
