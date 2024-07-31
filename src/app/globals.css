@@ -5,12 +5,14 @@
 .question-radio .ant-radio-group {
     /* background-color: red; */
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    ;
 }
 
 .question-radio .ant-radio-wrapper {
     grid-row: 4;
 }
+
 @font-face {
     font-family: "Satoshi";
     src: url('../Assets/font/Satoshi-Medium.ttf');
@@ -32,4 +34,22 @@ a,
 
 .ant-input {
     /* background-color: none !important; */
+}
+
+
+.custome-step .ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-tail::after {
+    background-color: red !important;
+}
+
+.custome-step .ant-steps-item-title {
+    color: brown;
+}
+
+.ant-steps-item .ant-steps-item-container .ant-steps-item-content .ant-steps-item-title::after {
+    
+  border: none;
+  border-top: 1px dashed #666666;
+  color: white;
+  background-color: white;
+  height: 1px;
 }
