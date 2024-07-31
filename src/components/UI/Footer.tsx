@@ -1,16 +1,21 @@
+'use client'
 import React from 'react'
 import { ImageImports } from '@/assets/ImageImports'
 import Image from 'next/image'
 import CustomButton from '@/components/UI/Button'
 import Input from 'antd/es/input/Input'
+import { useRouter } from 'next/navigation';
+import { usePathname } from "next/navigation";
 const Footer: React.FC = () => {
+    const { push } = useRouter();
+    const pathname = usePathname()
     return (
-        <div className='h-[50vh] bg-[#f7f7f7] flex flex-col justify-between'>
+        <div className='h-[50vh] bg-[#f7f7f7] flex flex-col justify-between mt-10'>
             <div className='grid grid-cols-12 justify-between items-center  '>
                 <div className='col-span-4 px-10'>
                     <Image src={ImageImports?.logo} className='w-[120px] h-[120px]' alt={''} />
                     <p className='my-2 text-[13px]'>LUXMED uses cutting edge AI technology to drive patients to your practice</p>
-                    <CustomButton btntype='green' text='Claim your free listing' addcss='mt-4'></CustomButton>
+                    <CustomButton addcss='mt-4' onClick={() => { pathname.includes('orthopedic') ? push('/signup/orthopedic') : push('/signup/aesthetic') }} btntype='green' text='Claim your free listing now!'></CustomButton>
                 </div>
                 <div className='col-span-4 col-start-8 px-10'>
                     <div className='flex flex-col gap-2'>

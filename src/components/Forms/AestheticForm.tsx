@@ -37,7 +37,7 @@ const AestheticForm: React.FC<OrthoFormProps> = (props) => {
     const [modal, setModal] = useState(false)
     const [submittedData, setSubmittedData] = useState({
     })
-    const [step, setStep] = useState(2)
+    const [step, setStep] = useState(0)
     const handleSubmit = () => {
         setModal(true)
         console.log(JSON.stringify(submittedData, null, 2))

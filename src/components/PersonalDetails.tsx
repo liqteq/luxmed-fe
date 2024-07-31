@@ -7,10 +7,10 @@ import { PersonalDetailProps } from './Forms/types'
 const PersonalDetails: React.FC<PersonalDetailProps> = (props) => {
     const Form = useForm()
     const fields = [
-        { type: 1, name: 'firstName', label: 'First Name', rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]   ", placeholder: "", span: "col-span-6", },
-        { type: 1, name: 'lastName', label: 'Last Name', rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]   ", placeholder: "", span: "col-span-6", },
-        { type: 1, name: 'yourPosition', label: 'Your Position', rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]   ", placeholder: "", span: "col-span-6", },
-        { type: 1, name: 'noOfPractitioners', label: 'How many Practitioners', rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]   ", placeholder: "", span: "col-span-6", },
+        { type: 1, name: 'firstName', label: 'First Name', estric: true, rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]   ", placeholder: "", span: "col-span-6", },
+        { type: 1, name: 'lastName', label: 'Last Name', estric: true, rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]   ", placeholder: "", span: "col-span-6", },
+        { type: 1, name: 'yourPosition', label: 'Your Position', estric: true, rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]   ", placeholder: "", span: "col-span-6", },
+        { type: 1, name: 'noOfPractitioners', label: 'How many Practitioners', estric: true, rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]   ", placeholder: "", span: "col-span-6", },
         { type: 1, name: 'noOfLocation', label: 'How many Location', rules: { required: false, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]  ", placeholder: "", span: "col-span-6", },
         { type: 1, name: 'websiteUrl', label: 'Website URL', rules: { required: false, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]  ", placeholder: "", span: "col-span-6", },
     ]

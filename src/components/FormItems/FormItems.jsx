@@ -57,7 +57,12 @@ const TextController = ({ defaultValue = null, fieldCss = "w-full", inputDivCss 
                 };
                 return (
                     <div className={`${divClassName}`}>
-                        {props?.label && <span className={`text-[10px]  text-custom-gray-800   ${labelCss}`}>{props?.label}</span>}
+                        {props?.label && <p>
+                            <span className={`text-[10px] text-custom-gray-800  ${props?.labelClassName}`}>{props?.label}
+                            </span>
+                            {props?.rules?.required && <span style={{ color: "#ff2020" }} className='text-[#ff2020] text-[12px]' >*</span>}
+                        </p>}
+
                         <div className={`flex items-center gap-2 w-full`}>
                             <div className="flex flex-col gap-1 w-full ">
                                 <Input
@@ -101,7 +106,13 @@ const TextAreaController = ({ defaultValue = null, fieldCss = "w-full   ", ...pr
                 const errorProps = getExternalProps(typeToRender, fieldState, field, props)
                 return (
                     <div className={`${divClassName}`}>
-                        {props?.label && <span className={`text-[10px] text-custom-gray-800 font-semibold ${props?.labelClassName}`}>{props?.label}</span>}
+                        {props?.label &&
+                            <p>
+                                <span className={`text-[10px] text-custom-gray-800 font-semibold ${props?.labelClassName}`}>{props?.label}
+                                </span>
+                                {props?.rules?.required && <span className='text-[#ff2020] text-[10px]' >*</span>}
+                            </p>
+                        }
                         <div className={`flex flex-col gap-1 ${fieldCss}`}>
                             <TextArea
                                 disabled={props?.disabled || false}
@@ -142,8 +153,11 @@ const SelectController = ({ defaultValue = undefined, ...props }) => {
                 };
                 return (
                     <span className={divClassName}>
-                        {props?.label && <span className={`text-[10px] text-custom-gray-800  ${props?.labelCss}`}>{props?.label}</span>}
-                        <div className={`flex flex-col gap-1 w-full ${props?.requiredDev} items-start`}>
+                        {props?.label && <p>
+                            <span className={`text-[10px] text-custom-gray-800  ${props?.labelClassName}`}>{props?.label}
+                            </span>
+                            {props?.rules?.required && <span style={{ color: "#ff2020" }} className='text-[#ff2020] text-[12px]' >*</span>}
+                        </p>}                        <div className={`flex flex-col gap-1 w-full ${props?.requiredDev} items-start`}>
                             <div className={`flex items-center gap-3 border border-custom-gray-300 rounded-[6px] w-full  ${props?.mainDivCss}`}>
                                 {props?.icon && <Image src={props?.icon} className="ml-[11px]" width={props?.iconWidth || 14} />}
                                 <AntDSelect
