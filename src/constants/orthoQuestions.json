@@ -16,13 +16,19 @@
             }
         },
         {
-            "id": "1-i",
+            "id": "1",
             "question": "Are you willing to share with potential clients your clinic's appointment availabilities on the same day they access the app?",
             "options": [
                 "Yes",
                 "No"
             ],
-            "name": "q-1"
+            "name": "q-2",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            }
         },
         {
             "id": "3",

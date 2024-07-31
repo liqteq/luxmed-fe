@@ -6,6 +6,8 @@ import homeWorldExposure from '@/assets/images/homeWorldExposure.svg'
 import greenBg from '@/assets/images/greenBg.svg'
 import UnCheckCircle from '@/assets/icons/circle-uncheck.svg'
 import CheckCircle from '@/assets/icons/circle-check.svg'
+import fireWork from '@/assets/images/firework.svg'
+import arrowDown from '@/assets/images/arrowDown.svg'
 
 export const ImageImports = {
     logo,
@@ -15,5 +17,7 @@ export const ImageImports = {
     girlHome,
     greenBg,
     UnCheckCircle,
-    CheckCircle
+    CheckCircle,
+    fireWork,
+    arrowDown
 }

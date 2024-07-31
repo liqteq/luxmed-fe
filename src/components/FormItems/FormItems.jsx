@@ -1,4 +1,6 @@
+import { ImageImports } from '@/assets/ImageImports';
 import { AutoComplete as AntDAutoComplete, Checkbox as AntDCheckbox, DatePicker as AntDDatePicker, Radio as AntDRadio, Select as AntDSelect, Switch as AntDSwitch, Input, Rate, Space, TimePicker } from 'antd';
+import Image from 'next/image';
 import { Controller } from "react-hook-form";
 const defaultFormType = 'antd'
 const { TextArea } = Input
@@ -120,8 +122,56 @@ const TextAreaController = ({ defaultValue = null, fieldCss = "w-full   ", ...pr
         />
     )
 }
+
+const SelectController = ({ defaultValue = undefined, ...props }) => {
+    const { divClassName = 'flex flex-col gap-1 w-full ' } = props
+    return (
+        <Controller
+            {...props}
+            name={props?.name}
+            key={props?.name}
+            control={props?.control}
+            defaultValue={defaultValue}
+            render={({ field, fieldState }) => {
+                const errorProps = getExternalProps('antd', fieldState, field, props)
+                const customOnChange = (e, { children } = {}) => {
+                    props?.state && props?.state((prev) => ({ ...prev, [props.stateKey]: e }));
+                    field?.onChange(e);
+                    props?.userOnChange && props.userOnChange(e, children);
+                    console.log(fieldState, field, props)
+                };
+                return (
+                    <span className={divClassName}>
+                        {props?.label && <span className={`text-[10px] text-custom-gray-800  ${props?.labelCss}`}>{props?.label}</span>}
+                        <div className={`flex flex-col gap-1 w-full ${props?.requiredDev} items-start`}>
+                            <div className={`flex items-center gap-3 border border-custom-gray-300 rounded-[6px] w-full  ${props?.mainDivCss}`}>
+                                {props?.icon && <Image src={props?.icon} className="ml-[11px]" width={props?.iconWidth || 14} />}
+                                <AntDSelect
+                                    {...field}
+                                    mode={props?.mode}
+                                    className="w-full rounded-none"
+                                    placeholder={props?.placeholder}
+                                    onChange={customOnChange}
+                                    allowClear={props?.allowClear || true}
+                                    showSearch
+                                    defaultValue={props?.defaultValue || undefined}
+                                    filterOption={(inputValue, option) => option.children ? option.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1 : null}
+                                    suffixIcon={<Image src={ImageImports?.arrowDown} className='h-[5px]' />}
+                                >
+                                    {props?.options && props?.options?.map(x => <AntDSelect.Option value={x?.value}>{x?.title}</AntDSelect.Option>)}
+                                </AntDSelect>
+                            </div>
+                            {errorProps?.status && <span style={{ color: "#D92D20", fontSize: "11px" }}> {errorProps?.message}</span>}
+                        </div>
+                    </span >
+                )
+            }}
+        />
+    )
+}
 export const FormMap = {
     1: TextController,
+    2: SelectController,
     11: TextAreaController,
 
 }

@@ -22,16 +22,17 @@ const Questionaire: React.FC<OrthoQuestionsProps> = (props) => {
             props?.setStep((prev) => Number(prev) + 1)
         })()
     }
-console.log(props?.questions)
+    console.log(props?.questions)
     return (
         <>
-            {props?.questions.map((que) => (
+            {props?.questions.map((que, index) => (
                 <Controller
                     control={control}
-                    name={que.question}
-                    key={que.name}
+                    name={`${index}`}
+                    key={index}
                     render={({ field, fieldState }) =>
                         <Question
+                            key={index}
                             question={que.question}
                             options={que.options}
                             value={field.value}
