@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
     const { push } = useRouter();
     const pathname = usePathname()
     return (
-        <div className='h-[50vh] bg-[#f7f7f7] flex flex-col justify-between mt-10'>
+        <div className='h-[50vh] bg-[#f7f7f7] flex flex-col justify-between '>
             <div className='grid grid-cols-12 justify-between items-center  '>
                 <div className='col-span-4 px-10'>
                     <Image src={ImageImports?.logo} className='w-[120px] h-[120px]' alt={''} />
