@@ -4,11 +4,12 @@ import { Steps } from 'antd'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import OrthoQuestions from '../OrthoQuestions'
-import OrthoProducts from './OrthoProducts'
+import Questionaire from '../Questionaire'
+import Products from '../Products'
 import { OrthoFormProps } from './types'
 import PersonalDetails from '../PersonalDetails'
 import ClinicDetail from '../ClinicDetail'
+import { questions } from '@/constants/orthoQuestions.json'
 
 const Step = Steps.Step
 const items = [
@@ -30,18 +31,22 @@ const items = [
     },
 ]
 const AestheticForm: React.FC<OrthoFormProps> = (props) => {
-    const { control, handleSubmit } = useForm()
+    const { control } = useForm()
     const [submittedData, setSubmittedData] = useState({
     })
     const [step, setStep] = useState(0)
-    console.log("🚀 ~ step:", step)
-    console.log("🚀 ~ submittedData:", submittedData)
-    const orthoform = {
+
+    const handleSubmit = () => {
+        console.log(JSON.stringify(submittedData, null, 2))
+    }
+
+    const formType: Record<number, any> = {
         0: <PersonalDetails control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />,
         1: <ClinicDetail control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />,
-        2: <OrthoQuestions control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />,
-        3: <OrthoProducts control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />
+        2: <Questionaire setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} questions={questions} type='aesthetic' />,
+        3: <Products setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} questions={questions} type='aesthetic' handleSubmit={handleSubmit} />
     }
+
     return (
         <div className='flex justify-center'>
             <div className='w-[70%] my-[10px] '>
@@ -66,7 +71,7 @@ const AestheticForm: React.FC<OrthoFormProps> = (props) => {
                         ))}
                     </Steps>
                 </div >
-                {orthoform[step]}
+                {formType[step]}
             </div>
         </div>
     )

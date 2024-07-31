@@ -12,7 +12,7 @@ const Question: React.FC<QuestionsProps> = (props) => {
             <Radio.Group
                 value={value}
                 options={options}
-                onChange={onChange}
+                onChange={(val)=>onChange(val.target.value)}
             />
             <p className='text-red-500 my-2 font-bold text-[10px] h-3'>{error}</p>
         </div>
