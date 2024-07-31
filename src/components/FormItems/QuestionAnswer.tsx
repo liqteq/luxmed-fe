@@ -13,15 +13,15 @@ const QuestionAnswer: React.FC<QuestionsProps> = (props) => {
             <Radio.Group
                 value={value?.selected}
                 options={options}
-                onChange={val => onChange({ ...value, selected: val })}
+                onChange={val => onChange({ ...value, selected: val.target.value })}
             />
 
-            <div className={`flex flex-col w-2/4 my-5`}> 
+            <div className={`flex flex-col w-2/4 my-5`}>
                 <TextArea
                     rows={4}
                     placeholder={detailPlaceholder}
                     value={value?.detail}
-                    onChange={e => onChange({ ...value, detail: value?.detail })}
+                    onChange={e => onChange({ ...value, detail: e.target.value })}
                 />
             </div>
 

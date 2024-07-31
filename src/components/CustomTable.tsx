@@ -1,11 +1,11 @@
 'use client'
 import { Checkbox, Table } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CustomTableProps } from './types';
 
 const CustomTable: React.FC<CustomTableProps> = (props) => {
 
-  const { heading, data } = props
+  const { heading, data, onChange } = props
 
   const [checkboxState, setCheckboxState] = useState(data);
 
@@ -62,6 +62,10 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
       )
     }
   ];
+
+  useEffect(()=>{
+    onChange(checkboxState)
+  },[checkboxState])
 
 
   return (

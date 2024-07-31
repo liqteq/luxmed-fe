@@ -10,5 +10,7 @@ export interface AestheticFormProps {
 export interface PersonalDetailProps {
     control: Control,
     setStep?: React.Dispatch<React.SetStateAction<number>>,
-    setSubmittedData?: React.Dispatch<React.SetStateAction<any>>
+    setSubmittedData?: React.Dispatch<React.SetStateAction<any>>,
+    step?: number,
+    submittedData?: any
 }

@@ -1,11 +1,11 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import FormController from './Controller/FormController'
 import CustomButton from './UI/Button'
 import { PersonalDetailProps } from './Forms/types'
 
-const ClinicDetail: React.FC<PersonalDetailProps> = () => {
+const ClinicDetail: React.FC<PersonalDetailProps> = (props) => {
     const Form = useForm()
     const fields = [
         { type: 1, name: 'clinicName', label: "Clinic's Name", rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]   ", placeholder: "", span: "col-span-6", },
@@ -23,14 +23,25 @@ const ClinicDetail: React.FC<PersonalDetailProps> = () => {
         { type: 1, name: 'purchasing_management_email', label: "Purchasing Management Email Address", rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]  ", placeholder: "", span: "col-span-6", },
         { type: 1, name: 'purchasing_management_telNo', label: "Purchasing Management Tel no.", rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]  ", placeholder: "", span: "col-span-6", },
     ]
+    const handleSetValues = () => {
+        if (props?.submittedData?.clinicDetail) Object?.keys(props?.submittedData?.clinicDetail)?.map((item, index) => {
+            Form?.setValue(item, props?.submittedData?.clinicDetail[item])
+        })
+    }
+    useEffect(() => {
+        handleSetValues()
+    }, [props?.step])
     return (
         <div>
             <FormController
                 formType={'antd'}
-                onSubmit={(val) => { console.log({ val }) }}
+                onSubmit={(val) => {
+                    props?.setSubmittedData((prev) => { return { ...prev, clinicDetail: val } })
+                    props?.setStep((prev) => Number(prev) + 1)
+                }}
                 submitButton={
                     <div className='w-full col-span-12 flex justify-end gap-3'>
-                        <CustomButton htmlType='submit' btntype='gray' text='Back' addcss='px-10' />
+                        <CustomButton onClick={() => { props?.setStep((prev) => Number(prev) - 1) }} htmlType='submit' btntype='gray' text='Back' addcss='px-10' />
                         <CustomButton htmlType='submit' btntype='green' text='Next' addcss='px-10' />
                     </div>
                 }

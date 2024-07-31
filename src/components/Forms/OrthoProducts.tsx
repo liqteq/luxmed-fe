@@ -9,8 +9,23 @@ import { Control, Controller } from 'react-hook-form'
 const OrthoProducts: React.FC<{ control: Control }> = ({ control }) => {
     return (
         <div>
-            <CustomTable heading='Aesthetic Medicine' data={aestheticsProducts} />
-            <CustomTable heading='Aesthetic Medicine' data={botoxProducts} />
+            <Controller
+                control={control}
+                render={({ field, fieldState }) =>
+                    <CustomTable heading='Aesthetic Medicine' data={aestheticsProducts} onChange={field.onChange}/>}
+                name={'product'}
+                key={'product'}
+            />
+
+            <Controller
+                control={control}
+                render={({ field, fieldState }) =>
+                    <CustomTable heading='Botox Type Injections' data={botoxProducts} onChange={field.onChange} />
+                }
+                name={'botox'}
+                key={'botox'}
+            />
+
 
             <h4 className='font-bold'>Skin Care</h4>
 
