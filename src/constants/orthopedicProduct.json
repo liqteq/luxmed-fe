@@ -1,0 +1,84 @@
+{
+    "orthopedicProducts": [
+        {
+            "key": 1,
+            "productname": "Gel One",
+            "manufacturer": "Zimmer Biomet",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 3,
+            "productname": "Orthovisc",
+            "manufacturer": "Anika Therapeutics",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 4,
+            "productname": "Monovisc",
+            "manufacturer": "Anika Therapeutics",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 5,
+            "productname": "Hyalagan",
+            "manufacturer": "Fidia Pharma USA Inc",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 6,
+            "productname": "Supartz FX",
+            "manufacturer": "Bioventus",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 7,
+            "productname": "Euflexxa",
+            "manufacturer": "Ferring B.V",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 8,
+            "productname": "Synvisc One",
+            "manufacturer": "Sanofi-aventis U.S",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 9,
+            "productname": "Visco-3",
+            "manufacturer": "Zimmer Biomet",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 10,
+            "productname": "Gelsyn-3",
+            "manufacturer": "Bioventus",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 11,
+            "productname": "TriVisc",
+            "manufacturer": "Avanos Medical, Inc",
+            "price": "$ 123",
+            "available": false,
+            "instock": false
+        }
+    ]
+}

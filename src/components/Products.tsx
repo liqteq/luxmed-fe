@@ -14,7 +14,9 @@ interface ProductsProps {
     setSubmittedData?: React.Dispatch<React.SetStateAction<any>>,
     step?: number,
     submittedData?: any
-    handleSubmit: () => void
+    handleSubmit: () => void,
+    products: any[]
+    botoxProducts: any[]
 }
 
 const Products: React.FC<ProductsProps> = (props) => {
@@ -33,7 +35,7 @@ const Products: React.FC<ProductsProps> = (props) => {
             <Controller
                 control={control}
                 render={({ field, fieldState }) =>
-                    <CustomTable heading='Aesthetic Medicine' data={aestheticsProducts} onChange={field.onChange} />}
+                    <CustomTable heading={props?.type === "aesthetic" ? 'Aesthetic Medicine' : "Orthopedics"} data={props?.products} onChange={field.onChange} />}
                 name={'aesthetic-medicine'}
                 key={'aesthetic-medicine'}
             />
@@ -41,16 +43,16 @@ const Products: React.FC<ProductsProps> = (props) => {
             <Controller
                 control={control}
                 render={({ field, fieldState }) =>
-                    <CustomTable heading='Botox Type Injections' data={botoxProducts} onChange={field.onChange} />
+                    <CustomTable heading={props?.type === "aesthetic" ? 'Botox Type Injections' : "Other Injections /Medications"} data={props?.botoxProducts} onChange={field.onChange} />
                 }
                 name={'botox-injections'}
                 key={'botox-injections'}
             />
 
 
-            <h4 className='font-bold my-3'>Skin Care</h4>
+            <h4 className='font-bold my-3'>{props?.type === "aesthetic" ? "Skin Care" : ""}</h4>
 
-            {props?.questions.map(que => (
+            {props?.questions.map((que, index) => (
                 <Controller
                     control={control}
                     render={({ field, fieldState }) =>
@@ -66,7 +68,7 @@ const Products: React.FC<ProductsProps> = (props) => {
                             />
                         </>
                     }
-                    name={que.question}
+                    name={index.toString()}
                     key={`skinCare-${que.name}`}
                 />
             ))}
@@ -88,7 +90,7 @@ const Products: React.FC<ProductsProps> = (props) => {
                 />
             </div>
 
-          
+
         </div>
     )
 }

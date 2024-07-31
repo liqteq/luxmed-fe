@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import FormController from './Controller/FormController'
 import CustomButton from './UI/Button'
@@ -14,15 +14,15 @@ const PersonalDetails: React.FC<PersonalDetailProps> = (props) => {
         { type: 1, name: 'noOfLocation', label: 'How many Location', rules: { required: false, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]  ", placeholder: "", span: "col-span-6", },
         { type: 1, name: 'websiteUrl', label: 'Website URL', rules: { required: false, }, use: 'antd', className: "text-xs h-10 w-full bg-[#fafafa]  ", placeholder: "", span: "col-span-6", },
     ]
-    const handleSetValues = () => {
+    const handleSetValues = useCallback(() => {
         if (props?.submittedData?.PersonalDetails) Object?.keys(props?.submittedData?.PersonalDetails)?.map((item, index) => {
             Form?.setValue(item, props?.submittedData?.PersonalDetails[item])
         })
-    }
+    }, [Form, props?.submittedData?.PersonalDetails])
     console.log("🚀 ~ handleSetValues ~ props?.submittedData:", props?.submittedData)
     useEffect(() => {
         handleSetValues()
-    }, [props?.step])
+    }, [props?.step, handleSetValues, Form])
     return (
         <div>
             <FormController

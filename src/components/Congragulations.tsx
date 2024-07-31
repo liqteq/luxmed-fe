@@ -17,7 +17,7 @@ const Congragulations: React.FC<any> = (props) => {
     ]
     useEffect(() => {
         Form?.reset()
-    }, [modal])
+    }, [modal, Form])
     return (
         <div className='my-3'>
             <div className='flex gap-2'>

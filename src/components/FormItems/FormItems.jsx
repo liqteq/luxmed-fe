@@ -77,7 +77,7 @@ const TextController = ({ defaultValue = null, fieldCss = "w-full", inputDivCss 
                                 />
                                 {errorProps?.status && <span style={{ color: "#D92D20", fontSize: "11px" }}> {errorProps?.message}</span>}
                             </div>
-                            {props?.cross && <Image src={ImageImports.closeIcon} width={20} onClick={() => props?.crossFunc()} className="cursor-pointer" />}
+                            {props?.cross && <Image alt='' src={ImageImports.closeIcon} width={20} onClick={() => props?.crossFunc()} className="cursor-pointer" />}
                         </div>
                     </div>
                 )
@@ -159,7 +159,7 @@ const SelectController = ({ defaultValue = undefined, ...props }) => {
                             {props?.rules?.required && <span style={{ color: "#ff2020" }} className='text-[#ff2020] text-[12px]' >*</span>}
                         </p>}                        <div className={`flex flex-col gap-1 w-full ${props?.requiredDev} items-start`}>
                             <div className={`flex items-center gap-3 border border-custom-gray-300 rounded-[6px] w-full  ${props?.mainDivCss}`}>
-                                {props?.icon && <Image src={props?.icon} className="ml-[11px]" width={props?.iconWidth || 14} />}
+                                {props?.icon && <Image alt='' src={props?.icon} className="ml-[11px]" width={props?.iconWidth || 14} />}
                                 <AntDSelect
                                     {...field}
                                     mode={props?.mode}
@@ -170,9 +170,9 @@ const SelectController = ({ defaultValue = undefined, ...props }) => {
                                     showSearch
                                     defaultValue={props?.defaultValue || undefined}
                                     filterOption={(inputValue, option) => option.children ? option.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1 : null}
-                                    suffixIcon={<Image src={ImageImports?.arrowDown} className='h-[5px]' />}
+                                    suffixIcon={<Image alt='' src={ImageImports?.arrowDown} className='h-[5px]' />}
                                 >
-                                    {props?.options && props?.options?.map(x => <AntDSelect.Option value={x?.value}>{x?.title}</AntDSelect.Option>)}
+                                    {props?.options && props?.options?.map((x, index) => <AntDSelect.Option key={index} value={x?.value}>{x?.title}</AntDSelect.Option>)}
                                 </AntDSelect>
                             </div>
                             {errorProps?.status && <span style={{ color: "#D92D20", fontSize: "11px" }}> {errorProps?.message}</span>}

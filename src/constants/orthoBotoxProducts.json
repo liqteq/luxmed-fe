@@ -2,32 +2,32 @@
     "botoxProducts": [
         {
             "key": 1,
-            "productname": "Botox",
-            "manufacturer": "Allergan",
+            "productname": "XIAflex",
+            "manufacturer": "-",
             "price": "$ 0.00",
             "available": false,
             "instock": false
         },
         {
             "key": 2,
-            "productname": "Dysport",
-            "manufacturer": "Galderma",
+            "productname": "Cortisol injections",
+            "manufacturer": "-",
             "price": "$ 0.00",
             "available": false,
             "instock": false
         },
         {
             "key": 3,
-            "productname": "Daxxify",
-            "manufacturer": "Revance Therapeutics",
+            "productname": "Botox injections",
+            "manufacturer": "-",
             "price": "$ 0.00",
             "available": false,
             "instock": false
         },
         {
             "key": 4,
-            "productname": "Xeomine",
-            "manufacturer": "Merz Therapeutics",
+            "productname": "PRP injections",
+            "manufacturer": "-",
             "price": "$ 0.00",
             "available": false,
             "instock": false
