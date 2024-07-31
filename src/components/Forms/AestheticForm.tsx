@@ -1,36 +1,35 @@
-import { questions } from '@/constants/skinCareQuestions.json'
-import React from 'react'
-import { Controller } from 'react-hook-form'
-import Question from '../FormItems/Question'
-import { AestheticFormProps } from '../types'
-import QuestionAnswer from '../FormItems/QuestionAnswer'
+'use client'
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import OrthoQuestions from '../OrthoQuestions'
+import OrthoProducts from './OrthoProducts'
+import { OrthoFormProps } from './types'
+import PersonalDetails from '../PersonalDetails'
 
-const AestheticForm: React.FC<AestheticFormProps> = (props) => {
-    const { control } = props
+
+const OrthoForm: React.FC<OrthoFormProps> = (props) => {
+
+    const { control, handleSubmit } = useForm()
+
+    const [step, setStep] = useState(1)
+
+    const orthoform = {
+        1: <PersonalDetails control={control} />,
+        3: <OrthoQuestions control={control} />,
+        4: <OrthoProducts control={control} />
+    }
 
     return (
         <div>
-            <h4 className='font-bold'>Skin Care</h4>
-
-            {questions.map(que => (
-                <Controller
-                    control={control}
-                    render={({ field, fieldState }) =>
-                        <QuestionAnswer
-                            question={que.question}
-                            options={que.options}
-                            value={field.value}
-                            onChange={(arg) => field.onChange(arg)}
-                            error={fieldState.error?.message}
-                            detailPlaceholder={que.detailPlaceholder}
-                        />
-                    }
-                    name={que.name}
-                    key={que.id}
-                />
-            ))}
+            <form onSubmit={handleSubmit(data => console.log(data))} className='flex justify-center'>
+                <div className='w-[70%] my-[20px] '>
+                    <p className='font-bold text-[25px] my-3 mb-5'>LUXMED Sign Up Form</p>
+                    {orthoform[step]}
+                </div>
+                {/* <button type='submit'>Submit</button> */}
+            </form>
         </div>
     )
 }
 
-export default AestheticForm
+export default OrthoForm

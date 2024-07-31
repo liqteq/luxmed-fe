@@ -5,12 +5,14 @@
 .question-radio .ant-radio-group {
     /* background-color: red; */
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    ;
 }
 
 .question-radio .ant-radio-wrapper {
     grid-row: 4;
 }
+
 @font-face {
     font-family: "Satoshi";
     src: url('../Assets/font/Satoshi-Medium.ttf');
@@ -53,7 +55,7 @@ a,
 }
 
 /* Remove hover, focus, and active background color for Input */
-.homeForm .ant-input:hover,
+.homeForm.ant-input:hover,
 .ant-input:focus,
 .ant-input:active {
     background-color: transparent !important;
@@ -67,8 +69,8 @@ a,
 }
 
 /* Targeting Ant Design TextArea placeholder */
-.homeForm .ant-input-textarea::placeholder,
-.homeForm .ant-input-textarea .ant-input::placeholder {
+.homeForm.ant-input-textarea::placeholder,
+.homeForm.ant-input-textarea .ant-input::placeholder {
     color: white;
     /* Change placeholder color to white */
 }

@@ -9,7 +9,7 @@ import { SignUpWrapperProps } from './types'
 
 const SignUpWrapper: React.FC<SignUpWrapperProps> = (props) => {
     const { control } = useForm()
-    const pathname = usePathname()
+        const pathname = usePathname()
 
 
     return (

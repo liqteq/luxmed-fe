@@ -55,7 +55,7 @@ const TextController = ({ defaultValue = null, fieldCss = "w-full", inputDivCss 
                 };
                 return (
                     <div className={`${divClassName}`}>
-                        {props?.label && <span className={`text-[10px]  text-custom-gray-800 font-semibold  ${labelCss}`}>{props?.label}</span>}
+                        {props?.label && <span className={`text-[10px]  text-custom-gray-800   ${labelCss}`}>{props?.label}</span>}
                         <div className={`flex items-center gap-2 w-full`}>
                             <div className="flex flex-col gap-1 w-full ">
                                 <Input
