@@ -1,15 +1,17 @@
-import { questions } from '@/constants/skinCareQuestions.json'
 import React from 'react'
-import { Controller } from 'react-hook-form'
-import Question from '../FormItems/Question'
-import { AestheticFormProps } from '../types'
+import CustomTable from '../CustomTable'
 import QuestionAnswer from '../FormItems/QuestionAnswer'
+import { aestheticsProducts } from '@/constants/aestheticsProduct.json'
+import { botoxProducts } from '@/constants/botoxProducts.json'
+import { questions } from '@/constants/skinCareQuestions.json'
+import { Control, Controller } from 'react-hook-form'
 
-const AestheticForm: React.FC<AestheticFormProps> = (props) => {
-    const { control } = props
-
+const OrthoProducts: React.FC<{ control: Control }> = ({ control }) => {
     return (
         <div>
+            <CustomTable heading='Aesthetic Medicine' data={aestheticsProducts} />
+            <CustomTable heading='Aesthetic Medicine' data={botoxProducts} />
+
             <h4 className='font-bold'>Skin Care</h4>
 
             {questions.map(que => (
@@ -28,9 +30,8 @@ const AestheticForm: React.FC<AestheticFormProps> = (props) => {
                     name={que.name}
                     key={que.id}
                 />
-            ))}
-        </div>
+            ))}</div>
     )
 }
 
-export default AestheticForm
+export default OrthoProducts

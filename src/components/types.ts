@@ -15,7 +15,7 @@ export interface AestheticFormProps {
 export interface QuestionsProps {
     question: string;
     options: string[];
-    value: string;
+    value: { selected: "Yes" | "No", detail: string };
     error?: string;
     detail?: string;
     detailPlaceholder?: string
@@ -23,5 +23,6 @@ export interface QuestionsProps {
 }
 
 export interface CustomTableProps {
-    heading: string
+    heading: string;
+    data: any[]
 }
