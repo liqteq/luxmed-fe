@@ -24,12 +24,19 @@ const Page: React.FC<any> = (props) => {
     return (
         <div className=''>
             <div className='flex justify-center'>
-                <p className='text-[30px] my-2 w-[70%] font-bold text-center'>
-                    Elevate and Grow Your <span className='text-custom-primary-500'> Orthopeadic, Sports Medicine </span> and <span className='text-custom-primary-500'> Pain Management Practice </span>with the Power of AI.
-                </p>
+                {
+                    pathname.includes('orthopedic') ?
+                        <p className='text-[30px] my-2 w-[70%] font-bold text-center'>
+                            Elevate and Grow Your <span className='text-custom-primary-500'> Orthopeadic, Sports Medicine </span> and <span className='text-custom-primary-500'> Pain Management Practice </span>with the Power of AI.
+                        </p>
+                        :
+                        <p className='text-[30px] my-2 w-[70%] font-bold text-center'>
+                            Utilize The power of AI to  elevate and Grow Your <span className='text-custom-primary-500'> Aesthetics Medicine, Dermatology </span>  &  <span className='text-custom-primary-500'>Plastic Surgery Practice</span>
+                        </p>
+                }
             </div>
             <p className='text-[13px] font-light text-center '>
-                LUXMED – Where Patients From Around The World Find You, and You Find Success!
+                LUXMED – Where <span className='text-custom-primary-500'> Patients </span>From Around The World Find You, and You Find Success!
             </p>
             <div className='flex justify-center my-5'>
                 <CustomButton onClick={() => { pathname.includes('orthopedic') ? push('/signup/orthopedic') : push('/signup/aesthetic') }} btntype='green' addcss='w-fit' text='Signup today for Free' />
@@ -60,7 +67,7 @@ const Page: React.FC<any> = (props) => {
                     <p className='text-[13px] font-light '>
                         LUXMED delivers on-demand results for patients seeking immediate products and services. Let Lux Med show you how your practice can tap into this demand for instant gradification.
                     </p>
-                    <CustomButton btntype='green' addcss='w-fit' text='Claim your free listing' />
+                    <CustomButton onClick={() => { pathname.includes('orthopedic') ? push('/signup/orthopedic') : push('/signup/aesthetic') }} btntype='green' addcss='w-fit' text='Claim your free listing' />
                 </div>
             </div>
             <div>
@@ -86,7 +93,7 @@ const Page: React.FC<any> = (props) => {
                         <p className='flex gap-1 items-center'><span className='h-[5px] w-[5px] rounded-full bg-custom-gray-lightGray'></span> Empowering connections and expanding buisness opportuinites</p>
                         <p className='flex gap-1 items-center'><span className='h-[5px] w-[5px] rounded-full bg-custom-gray-lightGray'></span> Allow patients to acess products sitting in your inventory without them expirying</p>
                     </div>
-                    <CustomButton btntype='green' addcss='my-4' text='Claim your free listing' />
+                    <CustomButton onClick={() => { pathname.includes('orthopedic') ? push('/signup/orthopedic') : push('/signup/aesthetic') }} btntype='green' addcss='my-4' text='Claim your free listing' />
                 </div>
                 <div className='col-span-6 flex justify-end'>
                     <Image src={ImageImports?.girlHome} alt='' className='h-[400px]' />

@@ -15,7 +15,7 @@ const Header: React.FC = () => {
                 pathname.includes('signup') ?
                     <CustomButton onClick={() => { pathname.includes('orthopedic') ? push('/home/orthopedic') : push('/home/aesthetic') }} text='Return to Home Page' addcss='border border-[#20655A] text-custom-primary-500 rounded-none'></CustomButton> : <div className='flex gap-2'>
                         <CustomButton btntype='gray' text='About Us'></CustomButton>
-                        <CustomButton btntype='green' text='Claim your free listing now!'></CustomButton>
+                        <CustomButton onClick={() => { pathname.includes('orthopedic') ? push('/signup/orthopedic') : push('/signup/aesthetic') }} btntype='green' text='Claim your free listing now!'></CustomButton>
                     </div>
             }
 
