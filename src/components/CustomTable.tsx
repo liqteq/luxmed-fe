@@ -15,6 +15,14 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
     setCheckboxState(newCheckboxState);
   };
 
+  const handlePriceUpdate = (rowIndex: number, value: string) => {
+    setCheckboxState(prev => {
+      return prev.map((it, index) => {
+        return index === rowIndex ? { ...it, price: value } : it
+      })
+    })
+  }
+
   const columns = [
     {
       title: "Product Name",
@@ -32,8 +40,12 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
       key: "price",
       align: 'center',
 
-      render: (value, record, rowIndex) => (
-        <p className='text-[#999999]'>{value}</p>
+      render: (value: any, _record: any, rowIndex: number) => (
+        <input value={value} onChange={e => {
+          handlePriceUpdate(rowIndex, e.target.value)
+        }}
+          style={{ backgroundColor: 'transparent', color: '#666666', outlineWidth: 0, textAlign: 'center' }}
+        />
       )
     },
     {
@@ -76,7 +88,6 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
         dataSource={checkboxState}
         className='mb-4'
         pagination={false}
-        // bordered
         size='small'
       />
     </div>
