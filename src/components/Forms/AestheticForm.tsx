@@ -41,9 +41,9 @@ const AestheticForm: React.FC<OrthoFormProps> = (props) => {
     const [submittedData, setSubmittedData] = useState({
     })
     const [step, setStep] = useState(0)
-    const handleSubmit = () => {
+    const handleSubmit = (updtData: any) => {
         setModal(true)
-        console.log(JSON.stringify(submittedData, null, 2))
+        console.log(JSON.stringify(updtData, null, 2))
     }
     const formType: Record<number, any> = {
         0: <PersonalDetails control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />,

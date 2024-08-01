@@ -28,7 +28,7 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
       title: "Product Name",
       dataIndex: "productname",
       key: "productname",
-        render: (value, record, rowIndex) => (
+      render: (value, record, rowIndex) => (
         <p className='text-[#999999]'>{value}</p>
       )
     },
@@ -51,6 +51,7 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
           handlePriceUpdate(rowIndex, e.target.value)
         }}
           style={{ backgroundColor: 'transparent', color: '#666666', outlineWidth: 0, textAlign: 'center' }}
+          placeholder="$ 0.00"
         />
       )
     },

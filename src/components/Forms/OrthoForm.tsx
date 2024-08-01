@@ -40,10 +40,11 @@ const OrthoForm: React.FC<OrthoFormProps> = (props) => {
     const [modal, setModal] = useState(false)
     const [submittedData, setSubmittedData] = useState({
     })
-    const [step, setStep] = useState(3)
-    const handleSubmit = () => {
+    const [step, setStep] = useState(0)
+
+    const handleSubmit = (updatedData: any) => {
         setModal(true)
-        console.log(JSON.stringify(submittedData, null, 2))
+        console.log("UPDATED DATA", JSON.stringify(updatedData, null, 1))
     }
     const formType: Record<number, any> = {
         0: <PersonalDetails control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />,

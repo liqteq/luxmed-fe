@@ -4,7 +4,7 @@
             "key": 1,
             "productname": "Botox",
             "manufacturer": "Allergan",
-            "price": "$ 0.00",
+            "price": "",
             "available": false,
             "instock": false
         },
@@ -12,7 +12,7 @@
             "key": 2,
             "productname": "Dysport",
             "manufacturer": "Galderma",
-            "price": "$ 0.00",
+            "price": "",
             "available": false,
             "instock": false
         },
@@ -20,7 +20,7 @@
             "key": 3,
             "productname": "Daxxify",
             "manufacturer": "Revance Therapeutics",
-            "price": "$ 0.00",
+            "price": "",
             "available": false,
             "instock": false
         },
@@ -28,7 +28,7 @@
             "key": 4,
             "productname": "Xeomine",
             "manufacturer": "Merz Therapeutics",
-            "price": "$ 0.00",
+            "price": "",
             "available": false,
             "instock": false
         }

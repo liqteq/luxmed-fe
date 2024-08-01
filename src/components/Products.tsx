@@ -14,7 +14,7 @@ interface ProductsProps {
     setSubmittedData?: React.Dispatch<React.SetStateAction<any>>,
     step?: number,
     submittedData?: any
-    handleSubmit: () => void,
+    handleSubmit: (arg: any) => void,
     products: any[]
     botoxProducts: any[]
 }
@@ -25,9 +25,10 @@ const Products: React.FC<ProductsProps> = (props) => {
     const handleNext = () => {
         handleSubmit((data) => {
             props?.setSubmittedData((prev: any) => {
-                return { ...prev, orthoQuestionaire: data }
+                const updtData = { ...prev, orthoQuestionaire: data }
+                props?.handleSubmit(updtData)
+                return updtData
             })
-            props?.handleSubmit()
         })()
     }
     return (
