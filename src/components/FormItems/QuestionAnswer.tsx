@@ -12,13 +12,15 @@ const QuestionAnswer: React.FC<QuestionsProps> = (props) => {
             <p className='text-s mt-2 mb-2'>{question}</p>
             <Radio.Group
                 value={value?.selected}
+                className=''
                 options={options}
                 onChange={val => onChange({ ...value, selected: val.target.value })}
             />
 
-            <div className={`flex flex-col w-2/4 my-5`}>
+            <div className={`flex flex-col w-full my-3`}>
                 <TextArea
                     rows={4}
+                    className='bg-[#fafafa]'
                     placeholder={detailPlaceholder}
                     value={value?.detail}
                     onChange={e => onChange({ ...value, detail: e.target.value })}

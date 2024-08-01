@@ -28,11 +28,17 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
       title: "Product Name",
       dataIndex: "productname",
       key: "productname",
+        render: (value, record, rowIndex) => (
+        <p className='text-[#999999]'>{value}</p>
+      )
     },
     {
       title: "Manufacturer",
       dataIndex: "manufacturer",
       key: "manufacturer",
+      render: (value, record, rowIndex) => (
+        <p className='text-[#999999]'>{value}</p>
+      )
     },
     {
       title: "Price",

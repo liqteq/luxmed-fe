@@ -5,12 +5,12 @@
 .question-radio .ant-radio-group {
     /* background-color: red; */
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     ;
 }
 
 .question-radio .ant-radio-wrapper {
-    grid-row: 4;
+    grid-row: 6;
 }
 
 @font-face {

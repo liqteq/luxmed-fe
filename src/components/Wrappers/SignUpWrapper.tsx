@@ -13,7 +13,7 @@ const SignUpWrapper: React.FC<SignUpWrapperProps> = (props) => {
 
 
     return (
-        <div>
+        <div className='mb-10'>
             {pathname.includes('orthopedic') ?
                 <OrthoForm control={control} /> :
                 <AestheticForm control={control} />

@@ -1,5 +1,5 @@
 import { ImageImports } from '@/assets/ImageImports';
-import { AutoComplete as AntDAutoComplete, Checkbox as AntDCheckbox, DatePicker as AntDDatePicker, Radio as AntDRadio, Select as AntDSelect, Switch as AntDSwitch, Input, Rate, Space, TimePicker } from 'antd';
+import { AutoComplete as AntDAutoComplete, Checkbox as AntDCheckbox, DatePicker as AntDDatePicker, Radio as AntDRadio, Select as AntDSelect, Switch as AntDSwitch, Input, Rate, Space, Tag, TimePicker } from 'antd';
 import Image from 'next/image';
 import { Controller } from "react-hook-form";
 const defaultFormType = 'antd'
@@ -135,7 +135,30 @@ const TextAreaController = ({ defaultValue = null, fieldCss = "w-full   ", ...pr
 }
 
 const SelectController = ({ defaultValue = undefined, ...props }) => {
-    const { divClassName = 'flex flex-col gap-1 w-full ' } = props
+    const tagRender = (props) => {
+        const { label, value, closable, onClose } = props;
+        const onPreventMouseDown = (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+        };
+        return (
+            <Tag
+                onMouseDown={onPreventMouseDown}
+                closable={closable}
+                onClose={onClose}
+                style={{
+                    marginInlineEnd: 4,
+                    backgroundColor: '#e4ebea',
+                    color: '#20655a',
+                    borderColor: '#20655a', // Optional: to match the border with the background
+
+                }}
+            >
+                {label}
+            </Tag>
+        );
+    };
+    const { divClassName = 'flex flex-col gap-2 w-full ' } = props
     return (
         <Controller
             {...props}
@@ -158,12 +181,13 @@ const SelectController = ({ defaultValue = undefined, ...props }) => {
                             </span>
                             {props?.rules?.required && <span style={{ color: "#ff2020" }} className='text-[#ff2020] text-[12px]' >*</span>}
                         </p>}                        <div className={`flex flex-col gap-1 w-full ${props?.requiredDev} items-start`}>
-                            <div className={`flex items-center gap-3 border border-custom-gray-300 rounded-[6px] w-full  ${props?.mainDivCss}`}>
+                            <div className={`flex items-center gap-3  rounded-[6px] w-full  ${props?.mainDivCss}`}>
                                 {props?.icon && <Image alt='' src={props?.icon} className="ml-[11px]" width={props?.iconWidth || 14} />}
                                 <AntDSelect
                                     {...field}
                                     mode={props?.mode}
-                                    className="w-full rounded-none"
+                                    tagRender={tagRender}
+                                    className="w-full rounded-none border-none bg-[#fafafa]"
                                     placeholder={props?.placeholder}
                                     onChange={customOnChange}
                                     allowClear={props?.allowClear || true}

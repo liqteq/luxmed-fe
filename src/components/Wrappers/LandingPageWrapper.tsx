@@ -99,7 +99,7 @@ const Page: React.FC<any> = (props) => {
                     <Image src={ImageImports?.girlHome} alt='' className='h-[400px]' />
                 </div>
             </div>
-            <div className='greenLines grid grid-cols-12 gap-3 px-10 my-4 h-[400px] items-center' >
+            <div className='greenLines grid grid-cols-12 gap-3 px-10 mt-5 h-[400px] items-center' >
                 <p className='col-span-6 text-[40px] text-white font-semibold'>Share any feedback as to what types of features you think our app should have</p>
                 <div className='col-span-6'>
                     <FormController
