@@ -25,7 +25,7 @@ const Products: React.FC<ProductsProps> = (props) => {
     const handleNext = () => {
         handleSubmit((data) => {
             props?.setSubmittedData((prev: any) => {
-                const updtData = { ...prev, orthoQuestionaire: data }
+                const updtData = { ...prev, products: data }
                 props?.handleSubmit(updtData)
                 return updtData
             })

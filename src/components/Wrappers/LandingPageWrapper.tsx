@@ -21,6 +21,17 @@ const Page: React.FC<any> = (props) => {
         { type: 11, name: 'message', label: '', rules: { required: true, }, use: 'antd', className: "text-xs h-10 w-full bg-transparent rounded-none text-white", placeholder: "Share your thoughts", span: "col-span-12", },
 
     ]
+
+    const onSubmitContactForm = async (data: any) => {
+        const response = await fetch('/api/s3-upload', {
+            method: 'POST',
+            body: JSON.stringify(data),
+        })
+        const res = await response.json()
+        console.log("API RESPONSE", res)
+    }
+
+
     return (
         <div className=''>
             <div className='flex justify-center'>
@@ -104,7 +115,7 @@ const Page: React.FC<any> = (props) => {
                 <div className='col-span-6'>
                     <FormController
                         formType={'antd'}
-                        onSubmit={(val: any) => { console.log({ val }) }}
+                        onSubmit={onSubmitContactForm}
                         submitButton={<CustomButton htmlType='submit' text='Send Feedback' addcss='bg-white my-2 col-span-3 text-custom-primary-500 rounded-none' />}
                         Form={Form}
                         className="grid grid-cols-12 gap-3 homeForm"

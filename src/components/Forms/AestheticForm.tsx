@@ -15,6 +15,7 @@ import CustomButton from '../UI/Button'
 import { aestheticsProducts } from '@/constants/aestheticsProduct.json'
 import { botoxProducts } from '@/constants/botoxProducts.json'
 import { questionaire } from '@/constants/aestheticQuestionaire.json'
+import { onSubmitForm } from '@/lib/utils'
 
 const Step = Steps.Step
 const items = [
@@ -41,10 +42,13 @@ const AestheticForm: React.FC<OrthoFormProps> = (props) => {
     const [submittedData, setSubmittedData] = useState({
     })
     const [step, setStep] = useState(0)
-    const handleSubmit = (updtData: any) => {
+
+    const handleSubmit = async (updatedData: any) => {
         setModal(true)
-        console.log(JSON.stringify(updtData, null, 2))
+        await onSubmitForm(updatedData)
+        console.log("UPDATED DATA", JSON.stringify(updatedData, null, 1))
     }
+
     const formType: Record<number, any> = {
         0: <PersonalDetails control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />,
         1: <ClinicDetail control={control} setStep={setStep} setSubmittedData={setSubmittedData} step={step} submittedData={submittedData} />,

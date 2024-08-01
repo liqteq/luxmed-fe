@@ -15,6 +15,7 @@ import { questions } from '@/constants/orthopedicQuestions.json'
 import { orthopedicProducts } from '@/constants/orthopedicProduct.json'
 import CustomButton from '../UI/Button'
 import { botoxProducts } from '@/constants/orthoBotoxProducts.json'
+import { onSubmitForm } from '@/lib/utils'
 
 const Step = Steps.Step
 const items = [
@@ -42,8 +43,9 @@ const OrthoForm: React.FC<OrthoFormProps> = (props) => {
     })
     const [step, setStep] = useState(0)
 
-    const handleSubmit = (updatedData: any) => {
+    const handleSubmit = async (updatedData: any) => {
         setModal(true)
+        await onSubmitForm(updatedData)
         console.log("UPDATED DATA", JSON.stringify(updatedData, null, 1))
     }
     const formType: Record<number, any> = {
