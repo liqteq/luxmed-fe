@@ -2,81 +2,217 @@
     "aestheticsProducts": [
         {
             "key": 1,
-            "productname": "Product A",
-            "manufacturer": "Manufacturer A",
-            "price": "$ 123",
+            "productname": "Juvederm Voluma XC",
+            "manufacturer": "Allergan",
+            "price": "",
             "available": false,
             "instock": false
         },
         {
             "key": 3,
-            "productname": "Product B",
-            "manufacturer": "Manufacturer B",
-            "price": "$ 123",
+            "productname": "Voluma",
+            "manufacturer": "Allergan",
+            "price": "",
             "available": false,
             "instock": false
         },
         {
             "key": 4,
-            "productname": "Product A",
-            "manufacturer": "Manufacturer A",
-            "price": "$ 123",
+            "productname": "Juvederm 30HV Gel Implants",
+            "manufacturer": "Allergan",
+            "price": "",
             "available": false,
             "instock": false
         },
         {
             "key": 5,
-            "productname": "Product B",
-            "manufacturer": "Manufacturer B",
-            "price": "$ 123",
+            "productname": "Juvederm 30",
+            "manufacturer": "Allergan",
+            "price": "",
             "available": false,
             "instock": false
         },
         {
             "key": 6,
-            "productname": "Product A",
-            "manufacturer": "Manufacturer A",
-            "price": "$ 123",
+            "productname": "Volbella",
+            "manufacturer": "Allergan",
+            "price": "",
             "available": false,
             "instock": false
         },
         {
             "key": 7,
-            "productname": "Product B",
-            "manufacturer": "Manufacturer B",
-            "price": "$ 123",
+            "productname": "Vollure",
+            "manufacturer": "Allergan",
+            "price": "",
             "available": false,
             "instock": false
         },
         {
             "key": 8,
-            "productname": "Product A",
-            "manufacturer": "Manufacturer A",
-            "price": "$ 123",
+            "productname": "Juverderm 24HV",
+            "manufacturer": "Allergan",
+            "price": "",
             "available": false,
             "instock": false
         },
         {
             "key": 9,
-            "productname": "Product B",
-            "manufacturer": "Manufacturer B",
-            "price": "$ 123",
+            "productname": "Hydrelle",
+            "manufacturer": "Anika Therapeutics",
+            "price": "",
             "available": false,
             "instock": false
         },
         {
             "key": 10,
-            "productname": "Product A",
-            "manufacturer": "Manufacturer A",
-            "price": "$ 123",
+            "productname": "Evolance Collagen Filler",
+            "manufacturer": "COLBAR LIFESCIENCE LTD.",
+            "price": "",
             "available": false,
             "instock": false
         },
         {
             "key": 11,
-            "productname": "Product B",
-            "manufacturer": "Manufacturer B",
-            "price": "$ 123",
+            "productname": "Hylaform (Hylan B Gel)",
+            "manufacturer": "Genzyme",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 12,
+            "productname": "Belatero Balance",
+            "manufacturer": "MERZ NORTH AMERICA",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 13,
+            "productname": "Radiesse 1.3CC",
+            "manufacturer": "MERZ NORTH AMERICA",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 14,
+            "productname": "Radiesse 0.3CC",
+            "manufacturer": "MERZ NORTH AMERICA",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 15,
+            "productname": "Revansse Shape",
+            "manufacturer": "Prollenium Medical Technologies",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 16,
+            "productname": "Revansse Ultra",
+            "manufacturer": "Prollenium Medical Technologies",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 17,
+            "productname": "Revansse Contour",
+            "manufacturer": "Prollenium Medical Technologies",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 18,
+            "productname": "Revansse Kysse",
+            "manufacturer": "Prollenium Medical Technologies",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 19,
+            "productname": "Revansse Outline",
+            "manufacturer": "Prollenium Medical Technologies",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 20,
+            "productname": "Revanesse Pure",
+            "manufacturer": "Prollenium Medical Technologies",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 21,
+            "productname": "Revanesse Versa",
+            "manufacturer": "Prollenium Medical Technologies",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 22,
+            "productname": "Sculptra",
+            "manufacturer": "Q Med AB",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 23,
+            "productname": "Sculptra Aesthetic",
+            "manufacturer": "Q Med AB",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 24,
+            "productname": "Restylane Injectable Gel",
+            "manufacturer": "Q Med AB",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 25,
+            "productname": "Restylane Kysse",
+            "manufacturer": "Q Med AB",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 26,
+            "productname": "Revansse Contour",
+            "manufacturer": "Q Med AB",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 27,
+            "productname": "Restylane Silk",
+            "manufacturer": "Q Med AB",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 28,
+            "productname": "Restylane Lyft",
+            "manufacturer": "Q Med AB",
+            "price": "",
             "available": false,
             "instock": false
         }

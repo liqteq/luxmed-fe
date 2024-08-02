@@ -2,7 +2,7 @@
     "questions": [
         {
             "id": "1",
-            "question": "Are you willing to share with potential clients your clinic's appointment availabilities?",
+            "question": "Do your sell medical skincare creams in your office?",
             "options": [
                 "Yes",
                 "No"
@@ -19,7 +19,7 @@
         },
         {
             "id": "2",
-            "question": "Do you offer special promotions on products/ procedures throughout the year?",
+            "question": "Are there any other products or services that your office sells/promotes?",
             "options": [
                 "Yes",
                 "No"

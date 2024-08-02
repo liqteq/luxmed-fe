@@ -2,36 +2,36 @@
     "questions": [
         {
             "id": "1",
-            "question": "Are you willing to share with potential clients your clinic's appointment availabilities?",
+            "question": "Q: Do your sell medical braces at your clinic?",
             "options": [
                 "Yes",
                 "No"
             ],
-            "name": "sc-question-1",
+            "name": "or-question-1",
             "rules": {
                 "required": {
                     "value": true,
                     "message": "* This is Required."
                 }
             },
-            "detail": "sc-detail-1",
+            "detail": "or-detail-1",
             "detailPlaceholder": "Please add which brand."
         },
         {
             "id": "2",
-            "question": "Do you offer special promotions on products/ procedures throughout the year?",
+            "question": "Q: Are there any other products or services  that your office sells/promotes?",
             "options": [
                 "Yes",
                 "No"
             ],
-            "name": "sc-question-2",
+            "name": "or-question-2",
             "rules": {
                 "required": {
                     "value": true,
                     "message": "* This is Required."
                 }
             },
-            "detail": "sc-detail-2",
+            "detail": "or-detail-2",
             "detailPlaceholder": "Please add which brand."
         }
     ]

@@ -1,13 +1,12 @@
 'use client'
 import { ImageImports } from '@/assets/ImageImports'
+import FormController from '@/components/Controller/FormController'
 import CustomButton from '@/components/UI/Button'
-import { url } from 'inspector'
 import Image from 'next/image'
 import React from 'react'
-import FormController from '@/components/Controller/FormController'
 import { useForm } from 'react-hook-form'
 interface RootLayoutProps {
-  children: React.ReactNode
+  children: any
 }
 const RootLayout: React.FC<RootLayoutProps> = (props) => {
   const { children } = props
@@ -95,7 +94,7 @@ const RootLayout: React.FC<RootLayoutProps> = (props) => {
           <FormController
             formType={'antd'}
             onSubmit={(val) => { console.log({ val }) }}
-            submitButton={<CustomButton htmlType='submit' text='Send Feedback' addcss='bg-white my-2 col-span-3 text-custom-primary-500' />}
+            submitButton={<CustomButton htmlType='submit' text='Send Feedback' addcss='bg-white my-2 col-span-3 text-custom-primary-500 rounded-none' />}
             Form={Form}
             className="grid grid-cols-12 gap-3 homeForm"
             fields={fields} />

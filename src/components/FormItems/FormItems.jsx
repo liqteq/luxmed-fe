@@ -1,4 +1,6 @@
-import { AutoComplete as AntDAutoComplete, Checkbox as AntDCheckbox, DatePicker as AntDDatePicker, Radio as AntDRadio, Select as AntDSelect, Switch as AntDSwitch, Input, Rate, Space, TimePicker } from 'antd';
+import { ImageImports } from '@/assets/ImageImports';
+import { AutoComplete as AntDAutoComplete, Checkbox as AntDCheckbox, DatePicker as AntDDatePicker, Radio as AntDRadio, Select as AntDSelect, Switch as AntDSwitch, Input, Rate, Space, Tag, TimePicker } from 'antd';
+import Image from 'next/image';
 import { Controller } from "react-hook-form";
 const defaultFormType = 'antd'
 const { TextArea } = Input
@@ -55,7 +57,12 @@ const TextController = ({ defaultValue = null, fieldCss = "w-full", inputDivCss 
                 };
                 return (
                     <div className={`${divClassName}`}>
-                        {props?.label && <span className={`text-[10px]  text-custom-gray-800 font-semibold  ${labelCss}`}>{props?.label}</span>}
+                        {props?.label && <p>
+                            <span className={`text-[10px] text-custom-gray-800  ${props?.labelClassName}`}>{props?.label}
+                            </span>
+                            {props?.rules?.required && <span style={{ color: "#ff2020" }} className='text-[#ff2020] text-[12px]' >*</span>}
+                        </p>}
+
                         <div className={`flex items-center gap-2 w-full`}>
                             <div className="flex flex-col gap-1 w-full ">
                                 <Input
@@ -70,7 +77,7 @@ const TextController = ({ defaultValue = null, fieldCss = "w-full", inputDivCss 
                                 />
                                 {errorProps?.status && <span style={{ color: "#D92D20", fontSize: "11px" }}> {errorProps?.message}</span>}
                             </div>
-                            {props?.cross && <Image src={ImageImports.closeIcon} width={20} onClick={() => props?.crossFunc()} className="cursor-pointer" />}
+                            {props?.cross && <Image alt='' src={ImageImports.closeIcon} width={20} onClick={() => props?.crossFunc()} className="cursor-pointer" />}
                         </div>
                     </div>
                 )
@@ -99,7 +106,13 @@ const TextAreaController = ({ defaultValue = null, fieldCss = "w-full   ", ...pr
                 const errorProps = getExternalProps(typeToRender, fieldState, field, props)
                 return (
                     <div className={`${divClassName}`}>
-                        {props?.label && <span className={`text-[10px] text-custom-gray-800 font-semibold ${props?.labelClassName}`}>{props?.label}</span>}
+                        {props?.label &&
+                            <p>
+                                <span className={`text-[10px] text-custom-gray-800 font-semibold ${props?.labelClassName}`}>{props?.label}
+                                </span>
+                                {props?.rules?.required && <span className='text-[#ff2020] text-[10px]' >*</span>}
+                            </p>
+                        }
                         <div className={`flex flex-col gap-1 ${fieldCss}`}>
                             <TextArea
                                 disabled={props?.disabled || false}
@@ -120,8 +133,83 @@ const TextAreaController = ({ defaultValue = null, fieldCss = "w-full   ", ...pr
         />
     )
 }
+
+const SelectController = ({ defaultValue = undefined, ...props }) => {
+    const tagRender = (props) => {
+        const { label, value, closable, onClose } = props;
+        const onPreventMouseDown = (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+        };
+        return (
+            <Tag
+                onMouseDown={onPreventMouseDown}
+                closable={closable}
+                onClose={onClose}
+                style={{
+                    marginInlineEnd: 4,
+                    backgroundColor: '#e4ebea',
+                    color: '#20655a',
+                    borderColor: '#20655a', // Optional: to match the border with the background
+
+                }}
+            >
+                {label}
+            </Tag>
+        );
+    };
+    const { divClassName = 'flex flex-col gap-2 w-full ' } = props
+    return (
+        <Controller
+            {...props}
+            name={props?.name}
+            key={props?.name}
+            control={props?.control}
+            defaultValue={defaultValue}
+            render={({ field, fieldState }) => {
+                const errorProps = getExternalProps('antd', fieldState, field, props)
+                const customOnChange = (e, { children } = {}) => {
+                    props?.state && props?.state((prev) => ({ ...prev, [props.stateKey]: e }));
+                    field?.onChange(e);
+                    props?.userOnChange && props.userOnChange(e, children);
+                    console.log(fieldState, field, props)
+                };
+                return (
+                    <span className={divClassName}>
+                        {props?.label && <p>
+                            <span className={`text-[10px] text-custom-gray-800  ${props?.labelClassName}`}>{props?.label}
+                            </span>
+                            {props?.rules?.required && <span style={{ color: "#ff2020" }} className='text-[#ff2020] text-[12px]' >*</span>}
+                        </p>}                        <div className={`flex flex-col gap-1 w-full ${props?.requiredDev} items-start`}>
+                            <div className={`flex items-center gap-3  rounded-[6px] w-full  ${props?.mainDivCss}`}>
+                                {props?.icon && <Image alt='' src={props?.icon} className="ml-[11px]" width={props?.iconWidth || 14} />}
+                                <AntDSelect
+                                    {...field}
+                                    mode={props?.mode}
+                                    tagRender={tagRender}
+                                    className="w-full rounded-none border-none bg-[#fafafa]"
+                                    placeholder={props?.placeholder}
+                                    onChange={customOnChange}
+                                    allowClear={props?.allowClear || true}
+                                    showSearch
+                                    defaultValue={props?.defaultValue || undefined}
+                                    filterOption={(inputValue, option) => option.children ? option.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1 : null}
+                                    suffixIcon={<Image alt='' src={ImageImports?.arrowDown} className='h-[5px]' />}
+                                >
+                                    {props?.options && props?.options?.map((x, index) => <AntDSelect.Option key={index} value={x?.value}>{x?.title}</AntDSelect.Option>)}
+                                </AntDSelect>
+                            </div>
+                            {errorProps?.status && <span style={{ color: "#D92D20", fontSize: "11px" }}> {errorProps?.message}</span>}
+                        </div>
+                    </span >
+                )
+            }}
+        />
+    )
+}
 export const FormMap = {
     1: TextController,
+    2: SelectController,
     11: TextAreaController,
 
 }

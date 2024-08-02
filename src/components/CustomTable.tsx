@@ -1,11 +1,11 @@
 'use client'
 import { Checkbox, Table } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CustomTableProps } from './types';
 
 const CustomTable: React.FC<CustomTableProps> = (props) => {
 
-  const { heading, data } = props
+  const { heading, data, onChange } = props
 
   const [checkboxState, setCheckboxState] = useState(data);
 
@@ -15,16 +15,30 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
     setCheckboxState(newCheckboxState);
   };
 
+  const handlePriceUpdate = (rowIndex: number, value: string) => {
+    setCheckboxState(prev => {
+      return prev.map((it, index) => {
+        return index === rowIndex ? { ...it, price: value } : it
+      })
+    })
+  }
+
   const columns = [
     {
       title: "Product Name",
       dataIndex: "productname",
       key: "productname",
+      render: (value, record, rowIndex) => (
+        <p className='text-[#999999]'>{value}</p>
+      )
     },
     {
       title: "Manufacturer",
       dataIndex: "manufacturer",
       key: "manufacturer",
+      render: (value, record, rowIndex) => (
+        <p className='text-[#999999]'>{value}</p>
+      )
     },
     {
       title: "Price",
@@ -32,8 +46,13 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
       key: "price",
       align: 'center',
 
-      render: (value, record, rowIndex) => (
-        <p className='text-[#999999]'>{value}</p>
+      render: (value: any, _record: any, rowIndex: number) => (
+        <input value={value} onChange={e => {
+          handlePriceUpdate(rowIndex, e.target.value)
+        }}
+          style={{ backgroundColor: 'transparent', color: '#666666', outlineWidth: 0, textAlign: 'center' }}
+          placeholder="$ 0.00"
+        />
       )
     },
     {
@@ -63,16 +82,19 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
     }
   ];
 
+  useEffect(() => {
+    onChange(checkboxState)
+  }, [checkboxState, onChange])
+
 
   return (
     <div>
-      <h4 className='font-bold'>{heading}</h4>
+      <h4 className='font-bold my-3 custom-table'>{heading}</h4>
       <Table
         columns={columns}
         dataSource={checkboxState}
-        className='w-2/3'
+        className='mb-4'
         pagination={false}
-        bordered
         size='small'
       />
     </div>
