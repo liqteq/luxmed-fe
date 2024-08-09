@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.question-radio .ant-radio-group {
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    ;
+}
+
+.question-radio .ant-radio-wrapper {
+    grid-row: 6;
+}
+
+@font-face {
+    font-family: "Satoshi";
+    src: url('../Assets/font/Satoshi-Medium.ttf');
+}
+
+*,
+body,
+html,
+input,
+textarea,
+a,
+*::placeholder {
+    font-family: "Satoshi";
+}
+
+.greenLines {
+    background-image: url('../assets/images/greenBg.svg')
+}
+
+.ant-input {
+    /* background-color: none !important; */
+}
+
+
+.custome-step .ant-steps-item-finish>.ant-steps-item-container>.ant-steps-item-tail::after {
+    background-color: red !important;
+}
+
+.custome-step .ant-steps-item-title {
+    color: brown;
+}
+
+.ant-steps-item .ant-steps-item-container .ant-steps-item-content .ant-steps-item-title::after {
+
+    border: none;
+    border-top: 1px dashed #666666;
+    color: white;
+    background-color: white;
+    height: 1px;
+}
+
+.homeForm .ant-input:hover {
+    background-color: transparent !important;
+    /* Remove hover background color */
+}
+
+/* Targeting Ant Design TextArea component */
+.homeForm .ant-input-textarea:hover .ant-input {
+    background-color: transparent !important;
+    /* Remove hover background color */
+}
+
+.homeForm .ant-input::placeholder {
+    color: white;
+    /* Change placeholder color to white */
+}
+
+/* Targeting Ant Design TextArea component */
+.homeForm .ant-input::placeholder {
+    color: white;
+    /* Change placeholder color to white */
+}
+
+/* Remove hover, focus, and active background color for Input */
+.homeForm.ant-input:hover,
+.ant-input:focus,
+.ant-input:active {
+    background-color: transparent !important;
+}
+
+/* Remove hover, focus, and active background color for TextArea */
+.homeForm .ant-input-textarea:hover .ant-input,
+.ant-input-textarea:focus .ant-input,
+.ant-input-textarea:active .ant-input {
+    background-color: transparent !important;
+}
+
+/* Targeting Ant Design TextArea placeholder */
+.homeForm.ant-input-textarea::placeholder,
+.homeForm.ant-input-textarea .ant-input::placeholder {
+    color: white;
+    /* Change placeholder color to white */
+}
+
+.ant-table {
+
+    border-width: 0px;
+    border-color: #cccccc7a;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.ant-table-cell {
+    border-left-width: 0px;
+    border-width: 1px;
+    border-color: #cccccc73;
+
+}
+
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #20655A;
+    border-color: #20655A;
+}
+
+
+.ant-radio-checked .ant-radio-inner {
+    border-color: #20655A !important;
+    background-color: transparent !important;
+}
+
+.ant-radio-checked .ant-radio-inner:after {
+    background-color: #20655A;
+}
+
+.ant-radio:hover .ant-radio-inner {
+    border-color: #20655A;
+    background-color: transparent;
+}
+
+.th.ant-table-cell::befor {
+    background-color: red;
+}
+
+.input.middle:focus {
+    outline-width: 0;
+}

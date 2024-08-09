@@ -1,0 +1,28 @@
+import { Control } from "react-hook-form";
+
+
+export interface SignUpWrapperProps {
+    children?: React.ReactNode
+}
+
+export interface OrthoFormProps {
+    control: Control
+}
+export interface AestheticFormProps {
+    control: Control
+}
+
+export interface QuestionsProps {
+    question: string;
+    options: string[];
+    value: { selected: "Yes" | "No", detail: string };
+    error?: string;
+    detail?: string;
+    detailPlaceholder?: string
+    onChange: (arg: any) => void
+}
+
+export interface CustomTableProps {
+    heading: string;
+    data: any[]
+}

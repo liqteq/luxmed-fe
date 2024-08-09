@@ -1,0 +1,36 @@
+{
+    "botoxProducts": [
+        {
+            "key": 1,
+            "productname": "XIAflex",
+            "manufacturer": "-",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 2,
+            "productname": "Cortisol injections",
+            "manufacturer": "-",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 3,
+            "productname": "Botox injections",
+            "manufacturer": "-",
+            "price": "",
+            "available": false,
+            "instock": false
+        },
+        {
+            "key": 4,
+            "productname": "PRP injections",
+            "manufacturer": "-",
+            "price": "",
+            "available": false,
+            "instock": false
+        }
+    ]
+}

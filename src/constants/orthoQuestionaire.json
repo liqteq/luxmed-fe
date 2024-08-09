@@ -1,0 +1,79 @@
+{
+    "questionaire": [
+        {
+            "id": "3",
+            "question": "Are you willing to share with potential clients your clinic's appointment availabilities on the same day they access the app?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "q-3",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            }
+        },
+        {
+            "id": "4",
+            "question": "Do you offer special promotions on specific products/ procedures throughout the year?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "q-4",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            }
+        },
+        {
+            "id": "5",
+            "question": "Are referrals from doctors mandatory?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "q-5",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            }
+        },
+        {
+            "id": "6",
+            "question": "Do you offer same-day Injectable Treatments, if not typically how long in advance do you require an appointment?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "q-6",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            }
+        },
+        {
+            "id": "6",
+            "question": "Do you offer telemedicine consulting?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "name": "q-6",
+            "rules": {
+                "required": {
+                    "value": true,
+                    "message": "* This is Required."
+                }
+            }
+        }
+    ]
+}
