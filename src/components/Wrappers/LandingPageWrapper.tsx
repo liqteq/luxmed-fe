@@ -8,6 +8,7 @@ import FormController from '@/components/Controller/FormController'
 import { useForm } from 'react-hook-form'
 import { usePathname } from 'next/navigation'
 import { useRouter } from 'next/navigation';
+import VideoPlayer from '../VideoPlayer'
 
 
 const Page: React.FC<any> = (props) => {
@@ -53,7 +54,8 @@ const Page: React.FC<any> = (props) => {
                 <CustomButton onClick={() => { pathname.includes('orthopedic') ? push('/signup/orthopedic') : push('/signup/aesthetic') }} btntype='green' addcss='w-fit' text='Signup today for Free' />
             </div>
             <div className='flex justify-center my-6'>
-                <Image src={ImageImports?.videoImage} alt='' className='w-[70%] shadow-2xl' />
+                {/* <Image src={ImageImports?.videoImage} unoptimized alt='' className='w-[70%] shadow-2xl' /> */}
+                <VideoPlayer />
             </div>
             <div className='grid grid-cols-12 items-center my-10'>
                 <div className='col-span-6  flex justify-center'>
@@ -107,7 +109,7 @@ const Page: React.FC<any> = (props) => {
                     <CustomButton onClick={() => { pathname.includes('orthopedic') ? push('/signup/orthopedic') : push('/signup/aesthetic') }} btntype='green' addcss='my-4' text='Claim your free listing' />
                 </div>
                 <div className='col-span-6 flex justify-end'>
-                    <Image src={ImageImports?.girlHome} alt='' className='h-[400px]' />
+                    <Image src={ImageImports?.girlHome} unoptimized alt='' className='h-[400px]' />
                 </div>
             </div>
             <div className='greenLines grid grid-cols-12 gap-3 px-10 mt-5 h-[400px] items-center' >
